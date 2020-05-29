@@ -1,7 +1,3 @@
 <resources>
     <string name="app_name">finalprojectgroup8</string>
-    <string-array name="registers">
-        <item>Register As Nanny</item>
-        <item>Register For Nanny</item>
-    </string-array>
 </resources>

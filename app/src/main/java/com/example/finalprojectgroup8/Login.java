@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -16,95 +17,122 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
-import com.google.gson.JsonObject;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.io.IOException;
-
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
 
 public class Login extends AppCompatActivity {
-    EditText emailId, password;
-    Button btnSignIn;
-    TextView tvSignUp;
-    FirebaseAuth mFirebaseAuth;
-
+    EditText email,password;
+    Button loginbtn,regisbtn;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       /* if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }*/
         setContentView(R.layout.activity_login);
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        emailId = findViewById(R.id.email1);
-        password = findViewById(R.id.password1);
-        btnSignIn = findViewById(R.id.loginas);
-        tvSignUp = findViewById(R.id.signupas);
+        email=findViewById(R.id.loginemail);
+        password=findViewById(R.id.loginpass);
+        loginbtn=findViewById(R.id.loginbtn);
+        regisbtn = findViewById(R.id.signbtn);
 
-        btnSignIn.setOnClickListener(new View.OnClickListener() {
+        loginbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String email = emailId.getText().toString();
-                String pwd = password.getText().toString();
-                if (email.isEmpty()) {
-                    emailId.setError("Please enter email id");
-                    emailId.requestFocus();
-                } else if (pwd.isEmpty()) {
-                    password.setError("Please enter your password");
-                    password.requestFocus();
-                } else if (email.isEmpty() && pwd.isEmpty()) {
-                    Toast.makeText(Login.this, "Fields Are Empty!", Toast.LENGTH_SHORT).show();
-                } else if (!(email.isEmpty() && pwd.isEmpty())) {
-                    mFirebaseAuth.signInWithEmailAndPassword(email, pwd).addOnCompleteListener(Login.this, new OnCompleteListener<AuthResult>() {
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if (!task.isSuccessful()) {
-                                Toast.makeText(Login.this, "Login Error, Please Login Again" ,Toast.LENGTH_SHORT).show();
-                            } else {
-                                FirebaseUser fireuser = FirebaseAuth.getInstance().getCurrentUser();
-                                Call<UserDTO> call = Retrofit_Client.getInstance().getApi().getuserdata(fireuser.getUid());
-                                call.enqueue(new Callback<UserDTO>() {
-                                    @Override
-                                    public void onResponse(Call<UserDTO> call, Response<UserDTO> response) {
-
-                                        Intent intent=new Intent();
-                                            if(response.body().getRole_name().equalsIgnoreCase("asnanny")){
-                                                 intent=new Intent(Login.this,HomeAsNanny.class);
-                                            }else{
-                                                 intent=new Intent(Login.this,HomeForNanny.class);
-                                            }
-                                            startActivity(intent);
-
-
-                                    }
-
-                                    @Override
-                                    public void onFailure(Call<UserDTO> call, Throwable t) {
-                                        Toast.makeText(Login.this, "Login Failed Try Again!", Toast.LENGTH_LONG).show();
-
-                                    }
-                                });
-                            }
-                        }
-                    });
-                } else {
-                    Toast.makeText(Login.this, "Error Occurred!", Toast.LENGTH_SHORT).show();
-
-                }
-
+                isUser();
             }
         });
-
-        tvSignUp.setOnClickListener(new View.OnClickListener() {
+        regisbtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intSignUp = new Intent(Login.this, Register.class);
-                startActivity(intSignUp);
+                Intent intent=new Intent(Login.this,Register.class);
+                startActivity(intent);
             }
         });
     }
+
+
+    private void isUser() {
+
+        int flag=0;
+        final String userenteredname=email.getEditableText().toString();
+        final String userenteredpass=password.getEditableText().toString();
+
+        if (TextUtils.isEmpty(userenteredname)){
+            email.setError("Enter UserName");
+        }
+        if (TextUtils.isEmpty(userenteredpass)){
+            password.setError("Enter Password");
+        }
+
+        if(flag == 0)
+        {
+            DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Registr As Nanny");
+            Query checkuser=reference.orderByChild("username").equalTo(userenteredname);
+            System.out.println("Print to console"+ checkuser);
+            checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
+                        if (passwordfromdb.equals(userenteredpass)) {
+                            Intent intent = new Intent(getApplicationContext(), HomeAsNanny.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                        } else {
+                            password.setError("Incorrect password");
+                        }
+                    }
+                }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+        flag =1;
+        }
+
+        if(flag ==0)
+        {
+            DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Registr For Nanny");
+
+            Query checkuser2 = reference2.orderByChild("username").equalTo(userenteredname);
+            System.out.println("Print to console ref2" + checkuser2);
+
+            checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
+                        if (passwordfromdb.equals(userenteredpass)) {
+
+                            Intent intent = new Intent(getApplicationContext(), HomeForNanny.class);
+                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                            startActivity(intent);
+                        } else {
+                            password.setError("Incorrect password");
+                        }
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+            flag=1;
+        }
+
+        if(flag==0)
+        {
+            email.setError("No Such User");
+        }
+    }
+
 }

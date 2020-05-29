@@ -3,162 +3,188 @@ package com.example.finalprojectgroup8;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.bluetooth.BluetoothA2dp;
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.Spinner;
-import android.widget.TextView;
 import android.widget.Toast;
 
-import com.google.android.gms.tasks.OnCompleteListener;
-import com.google.android.gms.tasks.Task;
-import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
-import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
-import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
 
-import okhttp3.ResponseBody;
-import retrofit2.Call;
-import retrofit2.Callback;
-import retrofit2.Response;
+import static android.R.layout.simple_spinner_item;
 
-public class Register extends AppCompatActivity implements AdapterView.OnItemSelectedListener {
+public class Register extends AppCompatActivity {
+    EditText signupname,signupphone,signupemail,signuppass;
+    Button button,button1;
+    FirebaseDatabase rootnode,rootnode2;
+    DatabaseReference reference,reference2;
+    Spinner spinner;
+    int selpos;
+    boolean flag=false,fieldcheck=false,usercheck=true;
+    boolean flag2 = false;
+    String textselect,testemail,username,testphone,testpass;
 
-    EditText firstname,lastname;
-    EditText emailId, password;
-    ImageView logo;
-    Button btnSignUp;
-    TextView tvSignIn;
-    FirebaseAuth mFirebaseAuth;
-    String roletext;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
-        mFirebaseAuth = FirebaseAuth.getInstance();
-        firstname = findViewById(R.id.fname1);
-        lastname = findViewById(R.id.lname1);
-        emailId = findViewById(R.id.emailid1);
-        password = findViewById(R.id.passwordd1);
-        btnSignUp = findViewById(R.id.register);
-        tvSignIn = findViewById(R.id.tvlogin1);
-        Spinner spinner = findViewById(R.id.spinner);
-        ArrayAdapter<CharSequence> adapter =ArrayAdapter.createFromResource(this,R.array.registers,android.R.layout.simple_spinner_item);
-        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        spinner.setAdapter(adapter);
-        spinner.setOnItemSelectedListener(this);
+
+        List<String> Regdata = new ArrayList<>();
+        Regdata.add(0,"Registr As Nanny");
+        Regdata.add(1,"Registr For Nanny");
+
+        signupemail=findViewById(R.id.email);
+        signupname=findViewById(R.id.name);
+        signupphone=findViewById(R.id.phone);
+        signuppass=findViewById(R.id.pass);
+        button=findViewById(R.id.signup);
+        button1= (Button) findViewById(R.id.asignup);
+        spinner= (Spinner) findViewById(R.id.regspin);
 
 
-
-
-
-        btnSignUp.setOnClickListener(new View.OnClickListener() {
+        ArrayAdapter<String>arrayAdapter=new ArrayAdapter<>
+                (this,android.R.layout.simple_spinner_item,Regdata);
+        arrayAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+        spinner.setAdapter(arrayAdapter);
+        spinner.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
-            public void onClick(View v) {
-                String fname = firstname.getText().toString();
-                String lname = lastname.getText().toString();
-                String email = emailId.getText().toString();
-                String pwd = password.getText().toString();
-                if (fname.isEmpty()){
-                    firstname.setError(("please enter first name"));
-                    firstname.requestFocus();
-                }
-                else if(lname.isEmpty()){
-                    lastname.setError(("please enter last name"));
-                    lastname.requestFocus();
+            public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
+                textselect=parent.getItemAtPosition(position).toString();
+                selpos = position;
+                Toast.makeText(Register.this,"Selected"+textselect,Toast.LENGTH_LONG).show();
+            }
 
-                }
-                else if(email.isEmpty()){
-                    emailId.setError("Please enter email id");
-                    emailId.requestFocus();
-                }
-                else  if(pwd.isEmpty()){
-                    password.setError("Please enter your password");
-                    password.requestFocus();
-                }
-                else if(pwd.length()<6){
-                    password.setError("Password must be more than 6 characters");
-                    password.requestFocus();
-                }
-                else  if(email.isEmpty() && pwd.isEmpty() && fname.isEmpty()&& lname.isEmpty()){
-                    Toast.makeText(Register.this,"Fields Are Empty!",Toast.LENGTH_SHORT).show();
-                }
-                else  if(!(email.isEmpty() && pwd.isEmpty() && fname.isEmpty() && lname.isEmpty())){
-                    mFirebaseAuth.createUserWithEmailAndPassword(email, pwd).addOnCompleteListener(Register.this, new OnCompleteListener<AuthResult>() {
+            @Override
+            public void onNothingSelected(AdapterView<?> parent) {
 
-                        @Override
-                        public void onComplete(@NonNull Task<AuthResult> task) {
-                            if(!task.isSuccessful()){
-                                Toast.makeText(Register.this,"SignUp Unsuccessful, Please Try Again",Toast.LENGTH_SHORT).show();
-                            }
-                            else {
-                                FirebaseUser fireuser = FirebaseAuth.getInstance().getCurrentUser();
-
-                                Call<ResponseBody> call = Retrofit_Client.getInstance().getApi().register(fireuser.getUid(),roletext,"test intro", emailId.getText().toString());
-                                call.enqueue(new Callback<ResponseBody>() {
-                                    @Override
-                                    public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                                        try {
-
-                                            String s = response.body().string();
-                                            Intent intent=new Intent(Register.this,Login.class);
-                                            startActivity(intent);
-                                            Toast.makeText(Register.this,"Successfully SignedUp",Toast.LENGTH_SHORT).show();
-
-                                        } catch (IOException e) {
-                                            e.printStackTrace();
-                                        }
-
-
-                                    }
-
-                                    @Override
-                                    public void onFailure(Call<ResponseBody> call, Throwable t) {
-                                        Toast.makeText(Register.this, "Failed to store in DB", Toast.LENGTH_LONG).show();
-
-                                    }
-                                });
-                            }
-                        }
-                    });
-                }
-                else{
-                    Toast.makeText(Register.this,"Error Occurred!",Toast.LENGTH_SHORT).show();
-
-                }
             }
         });
 
-        tvSignIn.setOnClickListener(new View.OnClickListener() {
+        button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(Register.this,Login.class);
-                startActivity(i);
+                Registrationconditions();
+                if(fieldcheck==false)
+                    CheckforDuplicateValues(username,selpos);
+
+            }
+        });
+
+        button1.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent1=new Intent(getApplicationContext(),Login.class);
+                startActivity(intent1);
             }
         });
     }
+    private void RigisterasNanny() {
+        rootnode=FirebaseDatabase.getInstance();
+        reference=rootnode.getReference("Registr As Nanny");
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone, testpass);
+        reference.child(username).setValue(javaHelperClass);
+        Intent intent=new Intent(getApplicationContext(),Login.class);
+        startActivity(intent);
+    }
 
-    @Override
-    public void onItemSelected(AdapterView<?> parent, View view, int position, long id) {
-        String text = parent.getItemAtPosition(position).toString();
-        if(text.equalsIgnoreCase("Register As Nanny")){
-            roletext="asnanny";
-        }else{
-            roletext="fornanny";
+    private void Rigisterfornanny() {
+        rootnode=FirebaseDatabase.getInstance();
+        reference=rootnode.getReference("Registr For Nanny");
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone, testpass);
+        reference.child(username).setValue(javaHelperClass);
+        Intent intent=new Intent(getApplicationContext(),Login.class);
+        startActivity(intent);
+    }
+
+    private void CheckforDuplicateValues(String username,int selpos){
+
+        if(selpos==0)
+        {
+            reference = rootnode.getInstance().getReference("Registr As Nanny");
+            Query checkuser = reference.orderByChild("username").equalTo(username);
+            checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()) {
+                        signupname.setError("Username already exits");
+                        Toast.makeText(Register.this, "Username already Exists", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        RigisterasNanny();
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+        }
+        else {
+            reference2 = rootnode2.getInstance().getReference("Registr For Nanny");
+            Query checkuser2 = reference2.orderByChild("username").equalTo(username);
+            checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists())
+                    {
+                        signupname.setError("Username already exits");
+                        Toast.makeText(Register.this, "Username already Exists", Toast.LENGTH_SHORT).show();
+                    }
+                    else
+                    {
+                        Rigisterfornanny();
+                    }
+                }
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+                }
+            });
+        }
+    }
+
+    private void Registrationconditions(){
+
+        testemail=signupemail.getText().toString();
+        username=signupname.getText().toString();
+        testphone=signupphone.getText().toString();
+        testpass=signuppass.getText().toString();
+
+        if (TextUtils.isEmpty(testemail)){
+            signupemail.setError("Email field is empty");
+            fieldcheck=true;
+        }
+        if (TextUtils.isEmpty(username)){
+            signupname.setError("Field is empty");
+            fieldcheck=true;
+        }
+        if (TextUtils.isEmpty(testphone)){
+            signupphone.setError("Field is empty");
+            fieldcheck=true;
+        }
+        if (TextUtils.isEmpty(testpass)){
+            signuppass.setError("Field is Empty");
+            fieldcheck=true;
         }
 
-        Toast.makeText(parent.getContext(),text,Toast.LENGTH_SHORT).show();
     }
 
-    @Override
-    public void onNothingSelected(AdapterView<?> parent) {
-
-    }
 }
