@@ -16,8 +16,6 @@
 
         <activity android:name=".Main2Activity"></activity>
         <activity android:name=".Register" />
-        <activity android:name=".HomeForNanny" />
-        <activity android:name=".HomeAsNanny" />
         <activity android:name=".Login" />
         <activity
             android:name=".MainActivity"

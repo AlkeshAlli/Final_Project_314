@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -59,80 +60,81 @@ public class Login extends AppCompatActivity {
 
     private void isUser() {
 
-        int flag=0;
-        final String userenteredname=email.getEditableText().toString();
-        final String userenteredpass=password.getEditableText().toString();
+        final String userenteredname = email.getEditableText().toString();
+        final String userenteredpass = password.getEditableText().toString();
 
-        if (TextUtils.isEmpty(userenteredname)){
+        if (TextUtils.isEmpty(userenteredname)) {
             email.setError("Enter UserName");
         }
-        if (TextUtils.isEmpty(userenteredpass)){
+        if (TextUtils.isEmpty(userenteredpass)) {
             password.setError("Enter Password");
         }
 
-        if(flag == 0)
-        {
-            DatabaseReference reference= FirebaseDatabase.getInstance().getReference("Registr As Nanny");
-            Query checkuser=reference.orderByChild("username").equalTo(userenteredname);
-            System.out.println("Print to console"+ checkuser);
-            checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
-                        if (passwordfromdb.equals(userenteredpass)) {
-                            Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-                        } else {
-                            password.setError("Incorrect password");
-                        }
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Registr As Nanny");
+        Query checkuser = reference.orderByChild("username").equalTo(userenteredname);
+        System.out.println("Print to console" + checkuser);
+        checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
+                    if (passwordfromdb.equals(userenteredpass)) {
+                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        password.setError("Incorrect password");
                     }
+                } else {
+                    validateinRegisterfornanny(userenteredname,userenteredpass);
+
                 }
+            }
 
             @Override
             public void onCancelled(@NonNull DatabaseError databaseError) {
 
             }
         });
-        flag =1;
-        }
+    }
+    public void validateinRegisterfornanny(String userenteredURFA,String userenteredPRFA){
 
-        if(flag ==0)
-        {
-            DatabaseReference reference2 = FirebaseDatabase.getInstance().getReference("Registr For Nanny");
+        final String userentrednameRFA=userenteredURFA;
+        final String userentredpassRFA=userenteredPRFA;
 
-            Query checkuser2 = reference2.orderByChild("username").equalTo(userenteredname);
-            System.out.println("Print to console ref2" + checkuser2);
 
-            checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    if (dataSnapshot.exists()) {
-                        String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
-                        if (passwordfromdb.equals(userenteredpass)) {
+        DatabaseReference referenceRFA = FirebaseDatabase.getInstance().getReference("Registr For Nanny");
 
-                            Intent intent = new Intent(getApplicationContext(), UpdateFragment.class);
-                            intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
-                            startActivity(intent);
-                        } else {
-                            password.setError("Incorrect password");
-                        }
+        Query checkuser2 = referenceRFA.orderByChild("username").equalTo(userentrednameRFA);
+        System.out.println("Print to console ref2" + checkuser2);
+
+        checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    String passwordfromdb = dataSnapshot.child(userentrednameRFA).child("password").getValue(String.class);
+                    if (passwordfromdb.equals(userentredpassRFA)) {
+
+                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                        intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
+                        startActivity(intent);
+                    } else {
+                        password.setError("Incorrect password");
                     }
                 }
-
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                else
+                {
+                    email.setError("No Such User");
                 }
-            });
-            flag=1;
-        }
+            }
 
-        if(flag==0)
-        {
-            email.setError("No Such User");
-        }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
     }
+
 
 }
