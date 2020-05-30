@@ -112,7 +112,7 @@ public class Login extends AppCompatActivity {
                         String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
                         if (passwordfromdb.equals(userenteredpass)) {
 
-                            Intent intent = new Intent(getApplicationContext(), HomeForNanny.class);
+                            Intent intent = new Intent(getApplicationContext(), UpdateFragment.class);
                             intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                             startActivity(intent);
                         } else {
