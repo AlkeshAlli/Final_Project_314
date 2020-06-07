@@ -163,6 +163,7 @@ public class Register extends AppCompatActivity {
 
     private void Registrationconditions(){
 
+        fieldcheck=false;
         testemail=signupemail.getText().toString();
         username=signupname.getText().toString();
         testphone=signupphone.getText().toString();

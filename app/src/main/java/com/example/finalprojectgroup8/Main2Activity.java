@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.MenuItem;
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -20,6 +21,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mDrawerToggle;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -57,10 +59,14 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             fragmentTransaction.commit();
         }
         if (id == R.id.updt) {
+
+
+
             UpdateFragment fragment = new UpdateFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frame_layout, fragment, "Update");
             fragmentTransaction.commit();
+
         }
         if (id == R.id.vp) {
             ViewFragment fragment = new ViewFragment();
@@ -106,4 +112,6 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         }
 
     }
+
+
 }

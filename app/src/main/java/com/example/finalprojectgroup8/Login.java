@@ -3,7 +3,9 @@ package com.example.finalprojectgroup8;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -30,12 +32,10 @@ public class Login extends AppCompatActivity {
     EditText email,password;
     Button loginbtn,regisbtn;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-       /* if (getIntent().getBooleanExtra("EXIT", false)) {
-            finish();
-        }*/
         setContentView(R.layout.activity_login);
         email=findViewById(R.id.loginemail);
         password=findViewById(R.id.loginpass);
@@ -79,6 +79,7 @@ public class Login extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
                     if (passwordfromdb.equals(userenteredpass)) {
+                        setSession(userenteredname,true);
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
@@ -114,7 +115,7 @@ public class Login extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     String passwordfromdb = dataSnapshot.child(userentrednameRFA).child("password").getValue(String.class);
                     if (passwordfromdb.equals(userentredpassRFA)) {
-
+                        setSession(userentrednameRFA,false);
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
@@ -134,6 +135,14 @@ public class Login extends AppCompatActivity {
             }
         });
 
+    }
+
+    public  void setSession(String username,Boolean asNanny){
+        SharedPreferences preferences = getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = preferences.edit();
+        editor.putString("username",username);
+        editor.putBoolean("Nannykey",asNanny);
+        editor.commit();
     }
 
 
