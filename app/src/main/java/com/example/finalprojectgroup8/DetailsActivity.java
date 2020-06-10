@@ -1,6 +1,8 @@
 package com.example.finalprojectgroup8;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
@@ -23,6 +25,13 @@ public class DetailsActivity extends AppCompatActivity {
         profilename = findViewById(R.id.profilename);
         profileemail = findViewById(R.id.profileemail);
         rate = findViewById(R.id.rate);
+        rate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent i= new Intent(DetailsActivity.this,Rating.class);
+                startActivity(i);
+            }
+        });
 
         getData();
         setData();
