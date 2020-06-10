@@ -2,6 +2,7 @@ package com.example.finalprojectgroup8;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
 
 import android.content.Context;
 import android.content.Intent;
@@ -32,10 +33,13 @@ public class Login extends AppCompatActivity {
     EditText email,password;
     Button loginbtn,regisbtn;
 
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+       /* if (getIntent().getBooleanExtra("EXIT", false)) {
+            finish();
+        }*/
+
         setContentView(R.layout.activity_login);
         email=findViewById(R.id.loginemail);
         password=findViewById(R.id.loginpass);
@@ -79,6 +83,8 @@ public class Login extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
                     if (passwordfromdb.equals(userenteredpass)) {
+
+
                         setSession(userenteredname,true);
                         Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
@@ -137,12 +143,15 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public  void setSession(String username,Boolean asNanny){
-        SharedPreferences preferences = getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
+    public void setSession(String username, Boolean asNanny){
+        SharedPreferences preferences =
+                getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
+
         SharedPreferences.Editor editor = preferences.edit();
-        editor.putString("username",username);
-        editor.putBoolean("Nannykey",asNanny);
-        editor.commit();
+        editor.putBoolean("asNanny", asNanny); // Storing asNanny boolean - true/false
+        editor.putString("username", username); // Storing username
+        editor.commit(); // commit changes
+
     }
 
 

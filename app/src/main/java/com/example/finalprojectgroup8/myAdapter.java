@@ -1,5 +1,6 @@
 package com.example.finalprojectgroup8;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -19,12 +20,14 @@ import java.util.ArrayList;
 public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
 
-    ValueEventListener homeFragment;
+    HomeFragment homeFragment;
     ArrayList<RecyclerViewList> recyclerViewLists;
 
-    public myAdapter(ValueEventListener home, ArrayList<RecyclerViewList> profiles){
-        homeFragment=home;
-        recyclerViewLists = profiles;
+
+    public myAdapter(HomeFragment home, ArrayList<RecyclerViewList> profiles){
+        this.homeFragment = home;
+        this.recyclerViewLists = profiles;
+
     }
 
 
@@ -44,18 +47,17 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         holder.myText2.setText(recyclerViewLists.get(position).getEmail());
 
 
-       /* holder.mainLayout.setOnClickListener(new View.OnClickListener() {
+        holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(context,DetailsActivity.class);
-                i.putExtra("data1", data1[position]);
-                i.putExtra("data2", data2[position]);
-                i.putExtra("myImage", images[position]);
-                context.startActivity(i);
-
-
+                Intent i = new Intent(homeFragment.getContext(),DetailsActivity.class);
+                i.putExtra("name", recyclerViewLists.get(position).getUsername());
+                i.putExtra("email",recyclerViewLists.get(position).getEmail());
+                (homeFragment).startActivity(i);
             }
-        });*/
+
+
+        });
 
 
 

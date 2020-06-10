@@ -1,5 +1,7 @@
 package com.example.finalprojectgroup8;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -12,12 +14,10 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
-import com.google.firebase.FirebaseApp;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
-import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.ArrayList;
@@ -39,39 +39,52 @@ public class HomeFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_home, container, false);
 
+        SharedPreferences preferences =this.getActivity().getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
 
+
+        if(preferences.getBoolean("asNanny",true)){
+            //get the list forNanny users
+            getUsersList(view, "Registr For Nanny");
+        }else{
+            //get the list asNanny users
+            getUsersList(view, "Registr As Nanny");
+        }
+        return view;
+    }
+
+    public void getUsersList(View view,String childParam){
         list = new ArrayList<RecyclerViewList>();
 
         recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
+        myadapter = new myAdapter((HomeFragment) this, list);
+        reference = FirebaseDatabase.getInstance().getReference().child(childParam);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
-
-            reference = FirebaseDatabase.getInstance().getReference().child("Registr As Nanny");
-            reference.addValueEventListener(new ValueEventListener() {
-                @Override
-                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-
-                    for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                        RecyclerViewList r = dataSnapshot1.getValue(RecyclerViewList.class);
-                        list.add(r);
-                    }
-                    myadapter = new myAdapter(this, list);
-                    recyclerView.setAdapter(myadapter);
-
+                for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
+                    RecyclerViewList r = dataSnapshot1.getValue(RecyclerViewList.class);
+                    list.add(r);
                 }
 
-                @Override
-                public void onCancelled(@NonNull DatabaseError databaseError) {
-                    Toast.makeText(getActivity(), "error", Toast.LENGTH_SHORT).show();
+                recyclerView.setAdapter(myadapter);
 
-                }
+            }
 
 
-            });
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(getActivity(), "error", Toast.LENGTH_SHORT).show();
+
+            }
 
 
-        return view;
+        });
+
+
     }
+
 
 }
