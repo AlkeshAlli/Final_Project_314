@@ -16,6 +16,9 @@ import android.widget.EditText;
 import android.widget.Spinner;
 import android.widget.Toast;
 
+import com.example.finalprojectgroup8.JavaHelperClass;
+import com.example.finalprojectgroup8.Login;
+import com.example.finalprojectgroup8.R;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -27,8 +30,6 @@ import com.google.firebase.database.ValueEventListener;
 import java.util.ArrayList;
 import java.util.List;
 
-import static android.R.layout.simple_spinner_item;
-
 public class Register extends AppCompatActivity {
     EditText signupname,signupphone,signupemail,signuppass;
     Button button,button1;
@@ -36,10 +37,8 @@ public class Register extends AppCompatActivity {
     DatabaseReference reference,reference2;
     Spinner spinner;
     int selpos;
-    boolean flag=false,fieldcheck=false,usercheck=true;
-    boolean flag2 = false;
+    boolean fieldcheck=false;
     String textselect,testemail,username,testphone,testpass;
-
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,8 +54,8 @@ public class Register extends AppCompatActivity {
         signupphone=findViewById(R.id.phone);
         signuppass=findViewById(R.id.pass);
         button=findViewById(R.id.signup);
-        button1= (Button) findViewById(R.id.asignup);
-        spinner= (Spinner) findViewById(R.id.regspin);
+        button1=findViewById(R.id.asignup);
+        spinner=findViewById(R.id.regspin);
 
 
         ArrayAdapter<String>arrayAdapter=new ArrayAdapter<>
@@ -90,7 +89,7 @@ public class Register extends AppCompatActivity {
         button1.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent1=new Intent(getApplicationContext(),Login.class);
+                Intent intent1=new Intent(getApplicationContext(), Login.class);
                 startActivity(intent1);
             }
         });
@@ -98,7 +97,7 @@ public class Register extends AppCompatActivity {
     private void RigisterasNanny() {
         rootnode=FirebaseDatabase.getInstance();
         reference=rootnode.getReference("Registr As Nanny");
-        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone, testpass);
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username,testemail,testphone,testpass);
         reference.child(username).setValue(javaHelperClass);
         Intent intent=new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
@@ -107,13 +106,13 @@ public class Register extends AppCompatActivity {
     private void Rigisterfornanny() {
         rootnode=FirebaseDatabase.getInstance();
         reference=rootnode.getReference("Registr For Nanny");
-        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone, testpass);
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone,testpass);
         reference.child(username).setValue(javaHelperClass);
         Intent intent=new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
     }
 
-    private void CheckforDuplicateValues(String username,int selpos){
+    private void CheckforDuplicateValues(final String username,int selpos){
 
         if(selpos==0)
         {
@@ -128,7 +127,25 @@ public class Register extends AppCompatActivity {
                     }
                     else
                     {
-                        RigisterasNanny();
+                        reference2 = rootnode2.getInstance().getReference("Registr For Nanny");
+                        Query checkuser2 = reference2.orderByChild("username").equalTo(username);
+                        checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists())
+                                {
+                                    signupname.setError("Username already exits");
+                                    Toast.makeText(Register.this, "Username already Exists", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    RigisterasNanny();
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                            }
+                        });
                     }
                 }
 
@@ -149,10 +166,31 @@ public class Register extends AppCompatActivity {
                         signupname.setError("Username already exits");
                         Toast.makeText(Register.this, "Username already Exists", Toast.LENGTH_SHORT).show();
                     }
+
                     else
+
                     {
-                        Rigisterfornanny();
+                        reference = rootnode.getInstance().getReference("Registr As Nanny");
+                        Query checkuser = reference.orderByChild("username").equalTo(username);
+                        checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if (dataSnapshot.exists())
+                                {
+                                    signupname.setError("Username already exits");
+                                    Toast.makeText(Register.this, "Username already Exists", Toast.LENGTH_SHORT).show();
+                                }
+                                else
+                                {
+                                    Rigisterfornanny();
+                                }
+                            }
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+                            }
+                        });
                     }
+
                 }
                 @Override
                 public void onCancelled(@NonNull DatabaseError databaseError) {
@@ -164,6 +202,7 @@ public class Register extends AppCompatActivity {
     private void Registrationconditions(){
 
         fieldcheck=false;
+
         testemail=signupemail.getText().toString();
         username=signupname.getText().toString();
         testphone=signupphone.getText().toString();

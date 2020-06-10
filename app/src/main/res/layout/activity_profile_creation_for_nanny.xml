@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/nannyscroll"
+    android:orientation="vertical"
+    tools:context=".ProfileCreationForNanny">
+
+
+    <ImageView
+        android:layout_marginTop="50dp"
+        android:id="@+id/profileimg"
+        android:layout_width="wrap_content"
+        android:layout_gravity="center"
+        android:layout_height="115dp"
+        app:srcCompat="@drawable/friend" />
+
+    <TextView
+        android:id="@+id/textwelcome"
+        android:layout_width="223dp"
+        android:layout_height="40dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:textSize="28dp"
+        android:textStyle="bold"
+        android:gravity="center"></TextView>
+
+    <EditText
+        android:id="@+id/editfname"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Full_Name"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editkids"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:ems="10"
+        android:inputType="number"
+        android:hint="No.of Kids" />
+
+
+    <EditText
+        android:id="@+id/editloc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="Location"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editdescription"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textMultiLine"
+        android:hint="Description" />
+
+
+
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+
+
+        <EditText
+            android:id="@+id/editage"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:layout_marginLeft="10dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Age" />
+
+        <EditText
+            android:id="@+id/editexp"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            android:layout_width="110dp"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Experience" />
+
+        <EditText
+            android:id="@+id/edithour"
+            android:layout_width="110dp"
+            android:layout_marginLeft="25dp"
+            android:gravity="center"
+            android:layout_height="40dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="Per Hour Rate" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/savebtn"
+        android:gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_marginLeft="10dp"
+        android:layout_gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="SaveDetails" />
+
+</LinearLayout>
+
+
+
+

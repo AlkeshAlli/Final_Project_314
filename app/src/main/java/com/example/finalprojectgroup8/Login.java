@@ -86,7 +86,7 @@ public class Login extends AppCompatActivity {
 
 
                         setSession(userenteredname,true);
-                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), ProfileCreationAsNanny.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
@@ -122,7 +122,7 @@ public class Login extends AppCompatActivity {
                     String passwordfromdb = dataSnapshot.child(userentrednameRFA).child("password").getValue(String.class);
                     if (passwordfromdb.equals(userentredpassRFA)) {
                         setSession(userentrednameRFA,false);
-                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
+                        Intent intent = new Intent(getApplicationContext(), ProfileCreationForNanny.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
