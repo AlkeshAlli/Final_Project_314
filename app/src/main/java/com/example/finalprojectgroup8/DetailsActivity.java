@@ -24,9 +24,11 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailsActivity extends AppCompatActivity {
     ImageView profilepicture;
     TextView profilename,profilelocation,profiledescription,profilewage,profileexperience,profileage;
+    //TextView profileemail;
     Button rate;
 
     String name;
+    //String storeusername, email;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,9 +40,11 @@ public class DetailsActivity extends AppCompatActivity {
         profilelocation = findViewById(R.id.asprofilelocation);
         profileage = findViewById(R.id.asprofileage);
         profiledescription = findViewById(R.id.asprofiledescription);
+        //profileemail = findViewById(R.id.asprofileemail);
         profileexperience = findViewById(R.id.asprofileexperience);
         profilewage = findViewById(R.id.asprofilewage);
         rate = findViewById(R.id.asrate);
+        //storeusername = getIntent().getStringExtra("takeusername");
         check();
         setData();
         rate.setOnClickListener(new View.OnClickListener() {

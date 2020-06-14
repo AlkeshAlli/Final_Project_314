@@ -3,7 +3,9 @@ package com.example.finalprojectgroup8;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -21,10 +23,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Rating extends AppCompatActivity {
     FirebaseDatabase rootnode;
-    DatabaseReference reference;
+    DatabaseReference reference,newreference;
     EditText mFeedback;
     TextView mRatingScale;
     String username;
+    String rating, review,reviewid,reviewerid,userid, usernamesession;
     int countreviews;
 
 
@@ -63,7 +66,9 @@ public class Rating extends AppCompatActivity {
                 }
             }
         });
-
+        SharedPreferences preferences = this.getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
+        usernamesession = preferences.getString("username", null);
+        Log.i("check","session"+usernamesession);
 
             reference = FirebaseDatabase.getInstance().getReference("review");
             mSendFeedback.setOnClickListener(new View.OnClickListener() {
@@ -74,7 +79,7 @@ public class Rating extends AppCompatActivity {
                     } else {
 
                         //  mFeedback.setText("");
-                        // mRatingBar.setRating(0);
+                        //  mRatingBar.setRating(0);
                         reference.child(username).addValueEventListener(new ValueEventListener() {
                             @Override
                             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -82,6 +87,11 @@ public class Rating extends AppCompatActivity {
                                 {
                                     countreviews=(int) dataSnapshot.getChildrenCount();
                                     Log.d("Reviews count", String.valueOf(countreviews));
+                                    reviewid="review"+(countreviews+1);
+                                }
+                                else
+                                {
+                                    reviewid="review1";
                                 }
                             }
 
@@ -90,12 +100,28 @@ public class Rating extends AppCompatActivity {
 
                             }
                         });
+                        rating = mRatingScale.getText().toString();
+                        review = mFeedback.getText().toString();
+                        reviewerid = usernamesession;
+                        //userid = mFeedback.getText().toString();
+                        userid=username;
+                        addreview();
                         Toast.makeText(Rating.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
                     }
                 }
             });
 
         }
+    private void addreview() {
+        rootnode = FirebaseDatabase.getInstance();
+        reference = rootnode.getReference("reviews");
+        newreference = reference.push();
+        ReviewHelper ReviewHelper = new ReviewHelper(review, rating, reviewerid, userid,reviewid);
+        newreference.child(userid).setValue(ReviewHelper);
+        String key = newreference.child(userid).getKey();
+        Log.i("key","rating"+key);
+
+    }
 
 
 }
