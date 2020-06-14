@@ -74,7 +74,7 @@ public class Login extends AppCompatActivity {
             password.setError("Enter Password");
         }
 
-        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Registr As Nanny");
+        DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Register As Nanny");
         Query checkuser = reference.orderByChild("username").equalTo(userenteredname);
         System.out.println("Print to console" + checkuser);
         checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -84,9 +84,9 @@ public class Login extends AppCompatActivity {
                     String passwordfromdb = dataSnapshot.child(userenteredname).child("password").getValue(String.class);
                     if (passwordfromdb.equals(userenteredpass)) {
 
-
-                        setSession(userenteredname,true);
-                        Intent intent = new Intent(getApplicationContext(), ProfileCreationAsNanny.class);
+                        String email = dataSnapshot.child(userenteredname).child("email").getValue(String.class);
+                        setSession(userenteredname,true,email);
+                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
@@ -110,7 +110,7 @@ public class Login extends AppCompatActivity {
         final String userentredpassRFA=userenteredPRFA;
 
 
-        DatabaseReference referenceRFA = FirebaseDatabase.getInstance().getReference("Registr For Nanny");
+        DatabaseReference referenceRFA = FirebaseDatabase.getInstance().getReference("Register For Nanny");
 
         Query checkuser2 = referenceRFA.orderByChild("username").equalTo(userentrednameRFA);
         System.out.println("Print to console ref2" + checkuser2);
@@ -121,8 +121,9 @@ public class Login extends AppCompatActivity {
                 if (dataSnapshot.exists()) {
                     String passwordfromdb = dataSnapshot.child(userentrednameRFA).child("password").getValue(String.class);
                     if (passwordfromdb.equals(userentredpassRFA)) {
-                        setSession(userentrednameRFA,false);
-                        Intent intent = new Intent(getApplicationContext(), ProfileCreationForNanny.class);
+                        String email = dataSnapshot.child(userentrednameRFA).child("email").getValue(String.class);
+                        setSession(userentrednameRFA,false,email);
+                        Intent intent = new Intent(getApplicationContext(), Main2Activity.class);
                         intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TASK);
                         startActivity(intent);
                     } else {
@@ -143,13 +144,14 @@ public class Login extends AppCompatActivity {
 
     }
 
-    public void setSession(String username, Boolean asNanny){
+    public void setSession(String username, Boolean asNanny,String email){
         SharedPreferences preferences =
                 getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
 
         SharedPreferences.Editor editor = preferences.edit();
         editor.putBoolean("asNanny", asNanny); // Storing asNanny boolean - true/false
         editor.putString("username", username); // Storing username
+        editor.putString("email", email);
         editor.commit(); // commit changes
 
     }

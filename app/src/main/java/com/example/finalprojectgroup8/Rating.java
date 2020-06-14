@@ -1,8 +1,11 @@
 package com.example.finalprojectgroup8;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -10,25 +13,31 @@ import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Rating extends AppCompatActivity {
     FirebaseDatabase rootnode;
     DatabaseReference reference;
     EditText mFeedback;
     TextView mRatingScale;
+    String username;
+    int countreviews;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_rating);
-        final RatingBar mRatingBar = (RatingBar) findViewById(R.id.ratingBar);
+        final RatingBar mRatingBar = findViewById(R.id.ratingBar);
         mRatingScale = findViewById(R.id.tvRatingScale);
-        mFeedback = (EditText) findViewById(R.id.etFeedback);
-        final Button mSendFeedback = (Button) findViewById(R.id.btnSubmit);
+        mFeedback = findViewById(R.id.etFeedback);
+        final Button mSendFeedback = findViewById(R.id.btnSubmit);
 
-
+        username = getIntent().getStringExtra("username").toString();
         mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
@@ -56,7 +65,7 @@ public class Rating extends AppCompatActivity {
         });
 
 
-            reference = rootnode.getInstance().getReference("reviews");
+            reference = FirebaseDatabase.getInstance().getReference("review");
             mSendFeedback.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
@@ -66,6 +75,21 @@ public class Rating extends AppCompatActivity {
 
                         //  mFeedback.setText("");
                         // mRatingBar.setRating(0);
+                        reference.child(username).addValueEventListener(new ValueEventListener() {
+                            @Override
+                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                                if(dataSnapshot.exists())
+                                {
+                                    countreviews=(int) dataSnapshot.getChildrenCount();
+                                    Log.d("Reviews count", String.valueOf(countreviews));
+                                }
+                            }
+
+                            @Override
+                            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                            }
+                        });
                         Toast.makeText(Rating.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
                     }
                 }

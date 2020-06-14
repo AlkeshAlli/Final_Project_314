@@ -44,10 +44,10 @@ public class HomeFragment extends Fragment {
 
         if(preferences.getBoolean("asNanny",true)){
             //get the list forNanny users
-            getUsersList(view, "Registr For Nanny");
+            getUsersList(view, "Profile Creation For Nanny");
         }else{
             //get the list asNanny users
-            getUsersList(view, "Registr As Nanny");
+            getUsersList(view, "Profile Creation AsNanny");
         }
         return view;
     }
@@ -55,10 +55,10 @@ public class HomeFragment extends Fragment {
     public void getUsersList(View view,String childParam){
         list = new ArrayList<RecyclerViewList>();
 
-        recyclerView = (RecyclerView) view.findViewById(R.id.recyclerview);
+        recyclerView = view.findViewById(R.id.recyclerview);
         RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(getActivity());
         recyclerView.setLayoutManager(layoutManager);
-        myadapter = new myAdapter((HomeFragment) this, list);
+        myadapter = new myAdapter(this, list);
         reference = FirebaseDatabase.getInstance().getReference().child(childParam);
         reference.addValueEventListener(new ValueEventListener() {
             @Override

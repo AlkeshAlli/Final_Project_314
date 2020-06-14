@@ -3,6 +3,7 @@ package com.example.finalprojectgroup8;
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -43,17 +44,29 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+        int pic=R.drawable.logo;
         holder.myText1.setText(recyclerViewLists.get(position).getUsername());
-        holder.myText2.setText(recyclerViewLists.get(position).getEmail());
+        holder.myText2.setText(recyclerViewLists.get(position).getLocation());
+        holder.myImage.setImageResource(pic);
 
+        SharedPreferences preferences = this.homeFragment.getActivity().getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
 
+        final Boolean userbool = preferences.getBoolean("asNanny",true);
         holder.mainLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent i = new Intent(homeFragment.getContext(),DetailsActivity.class);
-                i.putExtra("name", recyclerViewLists.get(position).getUsername());
-                i.putExtra("email",recyclerViewLists.get(position).getEmail());
-                (homeFragment).startActivity(i);
+                if(userbool == false)
+                {
+                    Intent i = new Intent(homeFragment.getContext(),DetailsActivity.class);
+                    i.putExtra("viewname", recyclerViewLists.get(position).getUsername());
+                    (homeFragment).startActivity(i);
+                }
+                else
+                {
+                    Intent i = new Intent(homeFragment.getContext(),DetailsForNanny.class);
+                    i.putExtra("viewname", recyclerViewLists.get(position).getUsername());
+                    (homeFragment).startActivity(i);
+                }
             }
 
 
@@ -62,6 +75,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
 
     }
+
 
     @Override
     public int getItemCount() {

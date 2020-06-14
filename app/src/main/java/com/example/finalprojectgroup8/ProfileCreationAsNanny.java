@@ -1,6 +1,7 @@
 package com.example.finalprojectgroup8;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -58,6 +59,8 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
                 if (flagcheck == false);
                 senddatatodatabase();
                 Toast.makeText(ProfileCreationAsNanny.this,"Profile Created Successfully",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ProfileCreationAsNanny.this,Main2Activity.class);
+                startActivity(intent);
             }
         });
     }
@@ -75,6 +78,7 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
                 Creationdetails.setExperience(saveexp);
                 Creationdetails.setDescription(savedescrip);
                 Creationdetails.setFullname(savefname);
+                Creationdetails.setUsername(userfromsession);
                 reference.child(userfromsession).setValue(Creationdetails);
     }
 

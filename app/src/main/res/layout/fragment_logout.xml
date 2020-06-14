@@ -6,12 +6,33 @@
     tools:context=".LogoutFragment">
 
     <TextView
+        android:id="@+id/texto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Logout Fragment"
+        android:layout_centerVertical="true"
         android:gravity="center"
-        android:textSize="30sp"
-        android:layout_centerInParent="true"
-        />
+        android:text="Are you sure?"
+        android:textSize="30sp" />
+
+    <Button
+        android:id="@+id/yes"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@id/texto"
+        android:layout_marginBottom="-94dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:text="YES"/>
+    <Button
+        android:id="@+id/no"
+        android:text="NO"
+        android:layout_width="150dp"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@id/yes"
+        android:layout_marginBottom="-94dp"
+        android:layout_centerVertical="true"
+        android:layout_centerHorizontal="true"
+        android:gravity="center" />
 
 </RelativeLayout>

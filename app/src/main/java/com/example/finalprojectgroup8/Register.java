@@ -38,7 +38,7 @@ public class Register extends AppCompatActivity {
     Spinner spinner;
     int selpos;
     boolean fieldcheck=false;
-    String textselect,testemail,username,testphone,testpass;
+    String textselect,testemail,username,testphone,testpass,testreview;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,8 +46,8 @@ public class Register extends AppCompatActivity {
         setContentView(R.layout.activity_register);
 
         List<String> Regdata = new ArrayList<>();
-        Regdata.add(0,"Registr As Nanny");
-        Regdata.add(1,"Registr For Nanny");
+        Regdata.add(0,"Register As Nanny");
+        Regdata.add(1,"Register For Nanny");
 
         signupemail=findViewById(R.id.email);
         signupname=findViewById(R.id.name);
@@ -96,8 +96,8 @@ public class Register extends AppCompatActivity {
     }
     private void RigisterasNanny() {
         rootnode=FirebaseDatabase.getInstance();
-        reference=rootnode.getReference("Registr As Nanny");
-        JavaHelperClass javaHelperClass = new JavaHelperClass(username,testemail,testphone,testpass);
+        reference=rootnode.getReference("Register As Nanny");
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username,testemail,testphone,testpass,testreview);
         reference.child(username).setValue(javaHelperClass);
         Intent intent=new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
@@ -105,8 +105,8 @@ public class Register extends AppCompatActivity {
 
     private void Rigisterfornanny() {
         rootnode=FirebaseDatabase.getInstance();
-        reference=rootnode.getReference("Registr For Nanny");
-        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone,testpass);
+        reference=rootnode.getReference("Register For Nanny");
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone,testpass,testreview);
         reference.child(username).setValue(javaHelperClass);
         Intent intent=new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
@@ -116,7 +116,7 @@ public class Register extends AppCompatActivity {
 
         if(selpos==0)
         {
-            reference = rootnode.getInstance().getReference("Registr As Nanny");
+            reference = FirebaseDatabase.getInstance().getReference("Register As Nanny");
             Query checkuser = reference.orderByChild("username").equalTo(username);
             checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -127,7 +127,7 @@ public class Register extends AppCompatActivity {
                     }
                     else
                     {
-                        reference2 = rootnode2.getInstance().getReference("Registr For Nanny");
+                        reference2 = FirebaseDatabase.getInstance().getReference("Register For Nanny");
                         Query checkuser2 = reference2.orderByChild("username").equalTo(username);
                         checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -156,7 +156,7 @@ public class Register extends AppCompatActivity {
             });
         }
         else {
-            reference2 = rootnode2.getInstance().getReference("Registr For Nanny");
+            reference2 = FirebaseDatabase.getInstance().getReference("Register For Nanny");
             Query checkuser2 = reference2.orderByChild("username").equalTo(username);
             checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
                 @Override
@@ -170,7 +170,7 @@ public class Register extends AppCompatActivity {
                     else
 
                     {
-                        reference = rootnode.getInstance().getReference("Registr As Nanny");
+                        reference = FirebaseDatabase.getInstance().getReference("Register As Nanny");
                         Query checkuser = reference.orderByChild("username").equalTo(username);
                         checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
                             @Override
@@ -207,6 +207,7 @@ public class Register extends AppCompatActivity {
         username=signupname.getText().toString();
         testphone=signupphone.getText().toString();
         testpass=signuppass.getText().toString();
+        testreview="alkesh";
 
         if (TextUtils.isEmpty(testemail)){
             signupemail.setError("Email field is empty");

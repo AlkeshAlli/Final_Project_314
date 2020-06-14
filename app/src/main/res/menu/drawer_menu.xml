@@ -10,8 +10,8 @@
             android:icon="@drawable/ic_action_home"/>
         <item
             android:id="@+id/vp"
-            android:title="View Profile"
-            android:icon="@drawable/ic_action_view"/>
+            android:icon="@drawable/ic_action_view"
+            android:title="Profile" />
         <item
             android:id="@+id/review"
             android:title="My Reviews"
@@ -31,10 +31,10 @@
     <item android:title="Controls">
         <menu>
 
-        <item
-            android:id="@+id/updt"
-            android:title="Update Profile"
-            android:icon="@drawable/ic_action_updt"/>
+            <item
+                android:id="@+id/updt"
+                android:icon="@drawable/ic_action_updt"
+                android:title="Change Login Details" />
         <item
             android:id="@+id/lgout"
             android:title="Logout"

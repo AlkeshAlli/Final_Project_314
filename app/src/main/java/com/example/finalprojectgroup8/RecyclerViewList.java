@@ -2,14 +2,14 @@ package com.example.finalprojectgroup8;
 
 public class RecyclerViewList {
     String username;
-    String email;
+    String location;
 
     public RecyclerViewList() {
     }
 
-    public RecyclerViewList(String username, String email) {
+    public RecyclerViewList(String username, String location) {
         this.username = username;
-        this.email = email;
+        this.location = location;
     }
 
     public String getUsername() {
@@ -20,11 +20,11 @@ public class RecyclerViewList {
         this.username = username;
     }
 
-    public String getEmail() {
-        return email;
+    public String getLocation() {
+        return location;
     }
 
-    public void setEmail(String email) {
-        this.email = email;
+    public void setLocation(String email) {
+        this.location = location;
     }
 }

@@ -1,13 +1,22 @@
 package com.example.finalprojectgroup8;
 
 public class JavaHelperClass {
-    String username, email, phone, password;
+    String username, email, phone, password, review;
 
-    public JavaHelperClass(String username, String email, String phone, String password) {
+    public String getReview() {
+        return review;
+    }
+
+    public void setReview(String review) {
+        this.review = review;
+    }
+
+    public JavaHelperClass(String username, String email, String phone, String password, String review) {
         this.username = username;
         this.email = email;
         this.phone = phone;
         this.password = password;
+        this.review=review;
     }
 
 

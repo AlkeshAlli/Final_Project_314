@@ -1,16 +1,32 @@
 package com.example.finalprojectgroup8;
 
 public class ReviewHelper {
-    String description,rating,reviewerid,userid;
+    String description,rating,reviewerid,username,reviewid;
 
 
-    public ReviewHelper(String description, String rating, String reviewerid, String userid) {
+    public ReviewHelper(String description, String rating, String reviewerid, String userid,String reviewid) {
         this.description = description;
         this.rating = rating;
         this.reviewerid = reviewerid;
-        this.userid = userid;
+        this.username = userid;
+        this.reviewid = reviewid;
     }
 
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getReviewid() {
+        return reviewid;
+    }
+
+    public void setReviewid(String reviewid) {
+        this.reviewid = reviewid;
+    }
 
     public String getDescription() {
         return description;
@@ -22,10 +38,6 @@ public class ReviewHelper {
 
     public String getReviewerid() {
         return reviewerid;
-    }
-
-    public String getUserid() {
-        return userid;
     }
 
     public void setDescription(String description) {
@@ -40,8 +52,5 @@ public class ReviewHelper {
         this.reviewerid = reviewerid;
     }
 
-    public void setUserid(String userid) {
-        this.userid = userid;
-    }
 }
 

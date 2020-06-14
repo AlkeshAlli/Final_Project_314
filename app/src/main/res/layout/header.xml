@@ -8,27 +8,28 @@
     >
 
     <ImageView
+        android:id="@+id/photo"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@mipmap/ic_launcher_round"
-        />
+        android:src="@mipmap/ic_launcher_round" />
 
     <TextView
+        android:id="@+id/hedname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
         android:text="Baby Oldster Care Givers"
         android:textColor="#FFFFFF"
         android:textSize="20sp"
-        android:textStyle="bold"
-        android:layout_marginTop="10dp"
-        />
+        android:textStyle="bold" />
+
     <TextView
+        android:id="@+id/hedemail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="babyoldstercaregivers@gmail.com"
         android:textColor="#FFFFFF"
-        android:textSize="20sp"
-        />
+        android:textSize="20sp" />
 
 
 </LinearLayout>

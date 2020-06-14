@@ -1,6 +1,7 @@
 package com.example.finalprojectgroup8;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.text.TextUtils;
@@ -36,10 +37,6 @@ public class ProfileCreationForNanny extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile_creation_for_nanny);
-
-
-        editage = findViewById(R.id.editage);
-        editexperience = findViewById(R.id.editexp);
         editperhour = findViewById(R.id.edithour);
         editfullname = findViewById(R.id.editfname);
         editlocation = findViewById(R.id.editloc);
@@ -64,6 +61,8 @@ public class ProfileCreationForNanny extends AppCompatActivity {
                 senddatatodatabase();
 
                 Toast.makeText(ProfileCreationForNanny.this,"Profile Created Successfully",Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(ProfileCreationForNanny.this,Main2Activity.class);
+                startActivity(intent);
             }
         });
     }
@@ -76,12 +75,12 @@ public class ProfileCreationForNanny extends AppCompatActivity {
         Creationdetails = new JavaDetailsCreationClass();
         Creationdetails.setLocation(saveloc);
         Creationdetails.setRate(savehour);
-        Creationdetails.setAge(saveage);
-        Creationdetails.setExperience(saveexp);
         Creationdetails.setDescription(savedescrip);
         Creationdetails.setFullname(savefname);
         Creationdetails.setChildren(savechild);
+        Creationdetails.setUsername(userfromsession);
         reference.child(userfromsession).setValue(Creationdetails);
+
 
     }
 
@@ -89,19 +88,12 @@ public class ProfileCreationForNanny extends AppCompatActivity {
     public void Conditionsforfields(){
 
         flagcheck=false;
-        saveage=editage.getText().toString();
-        Log.i("Check","agelabel"+saveage);
         savedescrip=editdescrip.getText().toString();
         saveloc=editlocation.getText().toString();
         savefname=editfullname.getText().toString();
-        saveexp=editexperience.getText().toString();
         savehour=editperhour.getText().toString();
         savechild=editchildren.getText().toString();
 
-        if (TextUtils.isEmpty(saveage)){
-            editage.setError("Empty Field");
-            flagcheck=true;
-        }
         if (TextUtils.isEmpty(savedescrip)){
             editdescrip.setError("Empty Field");
             flagcheck=true;
@@ -112,10 +104,6 @@ public class ProfileCreationForNanny extends AppCompatActivity {
         }
         if (TextUtils.isEmpty(savefname)){
             editfullname.setError("Empty Field");
-            flagcheck=true;
-        }
-        if (TextUtils.isEmpty(saveexp)){
-            editexperience.setError("Empty Field");
             flagcheck=true;
         }
         if (TextUtils.isEmpty(savehour)){

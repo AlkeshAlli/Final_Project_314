@@ -6,9 +6,15 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.ImageView;
+import android.widget.TextView;
+
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
@@ -40,6 +46,25 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
       NavigationView navigationView= findViewById(R.id.nav_view);
       navigationView.setNavigationItemSelectedListener(this);
 
+        SharedPreferences preferences = this.getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
+
+        Boolean userbool = preferences.getBoolean("asNanny",true);
+        String status;
+        if(userbool == true)
+            status="Nanny";
+        else
+            status="Employer";
+
+       String usernamesession=preferences.getString("username",null);
+        String useremailsession = preferences.getString("email",null);
+        View headerView = navigationView.getHeaderView(0);
+        ImageView headimage = headerView.findViewById(R.id.photo);
+        TextView headname = headerView.findViewById(R.id.hedname);
+        TextView heademail = headerView.findViewById(R.id.hedemail);
+        int pic=R.drawable.logo;
+        headimage.setImageResource(pic);
+        headname.setText(usernamesession+"   "+status);
+        heademail.setText(useremailsession);
       HomeFragment fragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment, "Home");
@@ -64,7 +89,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
             UpdateFragment fragment = new UpdateFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Update");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "z");
             fragmentTransaction.commit();
 
         }
