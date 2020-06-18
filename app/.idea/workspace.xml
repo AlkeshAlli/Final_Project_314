@@ -11,9 +11,87 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b1e6537-1734-4146-910d-556f1295c2e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/Rating.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/ReviewHelper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/layout/activity_rating.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/anim/bottom_animation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/anim/top_animation.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/custom_button.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_account_circle_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_description_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_enhanced_encryption_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_local_phone_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_location_on_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_mail_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_person_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_vpn_key_24.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/bangers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/boogaloo.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/bungee.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/Bungee-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeHairline-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeInline-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeOutline-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeShade-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_colr_Windows.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_sbix_MacOS.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Hairline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Inline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Outline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Shade.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Inline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Outline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Shade.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Inline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Outline.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Regular.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Shade.otf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Hairline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Hairline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Hairline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Inline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Inline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Inline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Outline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Outline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Outline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Shade.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Shade.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Shade.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Inline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Inline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Inline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Outline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Outline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Outline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Shade.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Shade.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Shade.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Inline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Inline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Inline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Outline.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Outline.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Outline.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Regular.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Regular.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Regular.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Shade.eot" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Shade.woff" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Shade.woff2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/font_certs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" afterDir="false" />
@@ -82,17 +160,34 @@
       <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/DetailsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/DetailsActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/MainActivity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/logo.jpg" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_details.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_details_for_nanny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_details_for_nanny.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main2.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_as_nanny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_as_nanny.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_for_nanny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_for_nanny.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_rating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_rating.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_register.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_logout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_logout.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_update.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_update.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_view.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/layout/my_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/my_row.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
     </list>
-    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_API_27" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_R" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -109,6 +204,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="resourceFile" />
       </list>
     </option>
   </component>
@@ -127,33 +223,22 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-10T03:17:58.365Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/layout" />
-    <property name="project.structure.last.edited" value="Modules" />
-    <property name="project.structure.proportion" value="0.0" />
-    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/font" />
+    <property name="project.structure.last.edited" value="Dependencies" />
+    <property name="project.structure.proportion" value="0.17" />
+    <property name="project.structure.side.proportion" value="0.2" />
   </component>
   <component name="RecentsManager">
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.example.finalprojectgroup8" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/main/res/font" />
       <recent name="C:\Users\User\AndroidStudioProjects\test1\app\src\main\res\layout" />
       <recent name="$PROJECT_DIR$/src/main/res/layout" />
     </key>
   </component>
-  <component name="RunDashboard">
-    <option name="ruleStates">
-      <list>
-        <RuleState>
-          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
-        </RuleState>
-        <RuleState>
-          <option name="name" value="StatusDashboardGroupingRule" />
-        </RuleState>
-      </list>
-    </option>
-  </component>
-  <component name="RunManager" selected="Android App.test1-app">
+  <component name="RunManager" selected="Android App.latest-app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />
@@ -214,6 +299,57 @@
     </configuration>
     <configuration name="finalprojectgroup8-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
       <module name="finalprojectgroup8-app" />
+      <option name="DEPLOY" value="true" />
+      <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
+      <option name="DEPLOY_AS_INSTANT" value="false" />
+      <option name="ARTIFACT_NAME" value="" />
+      <option name="PM_INSTALL_OPTIONS" value="" />
+      <option name="DYNAMIC_FEATURES_DISABLED_LIST" value="" />
+      <option name="ACTIVITY_EXTRA_FLAGS" value="" />
+      <option name="MODE" value="default_activity" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <option name="SHOW_LOGCAT_AUTOMATICALLY" value="false" />
+      <option name="SKIP_NOOP_APK_INSTALLATIONS" value="true" />
+      <option name="FORCE_STOP_RUNNING_APP" value="true" />
+      <option name="TARGET_SELECTION_MODE" value="DEVICE_AND_SNAPSHOT_COMBO_BOX" />
+      <option name="SELECTED_CLOUD_MATRIX_CONFIGURATION_ID" value="-1" />
+      <option name="SELECTED_CLOUD_MATRIX_PROJECT_ID" value="" />
+      <option name="DEBUGGER_TYPE" value="Auto" />
+      <Auto>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Auto>
+      <Hybrid>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Hybrid>
+      <Java />
+      <Native>
+        <option name="USE_JAVA_AWARE_DEBUGGER" value="false" />
+        <option name="SHOW_STATIC_VARS" value="true" />
+        <option name="WORKING_DIR" value="" />
+        <option name="TARGET_LOGGING_CHANNELS" value="lldb process:gdb-remote packets" />
+        <option name="SHOW_OPTIMIZED_WARNING" value="true" />
+      </Native>
+      <Profilers>
+        <option name="ADVANCED_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_ENABLED" value="false" />
+        <option name="STARTUP_CPU_PROFILING_CONFIGURATION_NAME" value="Sample Java Methods" />
+      </Profilers>
+      <option name="DEEP_LINK" value="" />
+      <option name="ACTIVITY_CLASS" value="" />
+      <method v="2">
+        <option name="Android.Gradle.BeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="latest-app" type="AndroidRunConfigurationType" factoryName="Android App" activateToolWindowBeforeRun="false">
+      <module name="latest-app" />
       <option name="DEPLOY" value="true" />
       <option name="DEPLOY_APK_FROM_BUNDLE" value="false" />
       <option name="DEPLOY_AS_INSTANT" value="false" />
@@ -351,6 +487,26 @@
     </option>
   </component>
   <component name="WindowStateProjectService">
+    <state x="245" y="189" key="#PSD" timestamp="1592283877517">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="245" y="189" key="#PSD/0.0.1440.900@0.0.1440.900" timestamp="1592283877517" />
+    <state x="413" y="88" key="#test1-app" timestamp="1592143273605">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="413" y="88" key="#test1-app/0.0.1440.900@0.0.1440.900" timestamp="1592143273605" />
+    <state x="308" y="212" key="AndroidCreateResourceDirectoryDialog" timestamp="1592414585770">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="308" y="212" key="AndroidCreateResourceDirectoryDialog/0.0.1440.900@0.0.1440.900" timestamp="1592414585770" />
+    <state x="308" y="212" key="AndroidCreateResourceFileDialog" timestamp="1592322920002">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="308" y="212" key="AndroidCreateResourceFileDialog/0.0.1440.900@0.0.1440.900" timestamp="1592322920002" />
+    <state x="398" y="212" width="644" height="476" key="Downloadable.Font.Dialog.Size" timestamp="1592284892545">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="398" y="212" width="644" height="476" key="Downloadable.Font.Dialog.Size/0.0.1440.900@0.0.1440.900" timestamp="1592284892545" />
     <state width="1398" height="245" key="GridCell.Tab.0.bottom" timestamp="1591759887653">
       <screen x="0" y="0" width="1440" height="900" />
     </state>
@@ -387,6 +543,15 @@
       <screen x="0" y="0" width="1440" height="900" />
     </state>
     <state width="720" height="450" key="XDebugger.FullValuePopup/0.0.1440.900@0.0.1440.900" timestamp="1591759645571" />
+    <state x="369" y="282" key="com.intellij.ide.util.TipDialog" timestamp="1592452752355">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="369" y="282" key="com.intellij.ide.util.TipDialog/0.0.1440.900@0.0.1440.900" timestamp="1592452752355" />
+    <state x="369" y="282" key="com.intellij.ide.util.TipDialog/0.23.1440.826@0.23.1440.826" timestamp="1592321189754" />
+    <state x="267" y="200" key="psd.add.library.dependency.panel.dimension" timestamp="1592283859157">
+      <screen x="0" y="0" width="1440" height="900" />
+    </state>
+    <state x="267" y="200" key="psd.add.library.dependency.panel.dimension/0.0.1440.900@0.0.1440.900" timestamp="1592283859157" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>

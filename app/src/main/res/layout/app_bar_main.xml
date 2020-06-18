@@ -8,22 +8,24 @@
     <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:id="@+id/appbar"
         android:theme="@style/AppTheme.AppBarOverlay"
         >
         <androidx.appcompat.widget.Toolbar
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
-            android:background="@color/colorPrimary"
+            android:background="#8ec6eb"
             app:popupTheme="@style/AppTheme.PopupOverlay"
             />
 
         </com.google.android.material.appbar.AppBarLayout>
 
     <FrameLayout
+        android:id="@+id/frame_layout"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:id="@+id/frame_layout">
+        android:layout_marginTop="60dp">
 
     </FrameLayout>
 

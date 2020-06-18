@@ -1,38 +1,74 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".LogoutFragment">
+    android:orientation="vertical">
+
 
     <TextView
         android:id="@+id/texto"
+        android:layout_width="328dp"
+        android:layout_height="51dp"
+        android:layout_marginTop="200dp"
+        android:gravity="center"
+        android:text="Are You Sure?"
+        android:layout_gravity="center"
+        android:fontFamily="@font/boogaloo"
+        android:textColor="#8ec6eb"
+        android:textSize="28dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.126" />
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_centerVertical="true"
-        android:gravity="center"
-        android:text="Are you sure?"
-        android:textSize="30sp" />
+        android:layout_marginTop="20dp"
+        android:layout_marginBottom="20dp"
+        android:orientation="vertical">
+
+
+
 
     <Button
         android:id="@+id/yes"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignBottom="@id/texto"
-        android:layout_marginBottom="-94dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center"
-        android:text="YES"/>
-    <Button
-        android:id="@+id/no"
-        android:text="NO"
-        android:layout_width="150dp"
-        android:layout_height="60dp"
-        android:layout_alignBottom="@id/yes"
-        android:layout_marginBottom="-94dp"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"
-        android:gravity="center" />
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:textColor="#FFFFFF"
+        android:text="Yes"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.885" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/no"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button"
+            android:textColor="#FFFFFF"
+            android:text="No"
+            android:layout_gravity="center"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.885" />
+
+
+    </LinearLayout>
+
+
+</LinearLayout>

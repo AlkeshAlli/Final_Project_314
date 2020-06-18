@@ -24,6 +24,7 @@
         app:headerLayout="@layout/header"
         android:fitsSystemWindows="true"
         android:layout_gravity="start"
+
         >
     </com.google.android.material.navigation.NavigationView>
 

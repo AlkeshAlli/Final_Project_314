@@ -108,10 +108,14 @@
 
     <Button
         android:id="@+id/asrate"
-        android:layout_width="178dp"
+        android:layout_width="300dp"
         android:layout_height="59dp"
         android:text="Rate"
         android:textAlignment="center"
+        android:background="@drawable/custom_button"
+        android:textColor="#FFFFFF"
+
+
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.519"
