@@ -7,6 +7,7 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.util.Log;
@@ -14,19 +15,30 @@ import android.view.MenuItem;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 
 import com.google.android.material.navigation.NavigationView;
-
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
+import com.google.firebase.database.ValueEventListener;
 
 
 public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
 
     DrawerLayout mDrawerLayout;
     ActionBarDrawerToggle mDrawerToggle;
+    Boolean userbool;
+    SharedPreferences preferences;
+    String usernamesession;
+    DatabaseReference reference,reference2;
+    Query checkuser,checkuser2;
 
 
     @Override
@@ -46,16 +58,15 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
       NavigationView navigationView= findViewById(R.id.nav_view);
       navigationView.setNavigationItemSelectedListener(this);
 
-        SharedPreferences preferences = this.getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
-
-        Boolean userbool = preferences.getBoolean("asNanny",true);
+         preferences = this.getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
+         userbool = preferences.getBoolean("asNanny",true);
         String status;
         if(userbool == true)
             status="Nanny";
         else
             status="Employer";
 
-       String usernamesession=preferences.getString("username",null);
+        usernamesession=preferences.getString("username",null);
         String useremailsession = preferences.getString("email",null);
         View headerView = navigationView.getHeaderView(0);
         ImageView headimage = headerView.findViewById(R.id.photo);
@@ -97,6 +108,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             ViewFragment fragment = new ViewFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
             fragmentTransaction.replace(R.id.frame_layout, fragment, "View Profile");
+            CreatingProfiles(usernamesession);
             fragmentTransaction.commit();
         }
         else if (id == R.id.review) {
@@ -137,6 +149,76 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         }
 
     }
+    public void CreatingProfiles(String getname){
+        final String storename=getname;
+        Log.i("name","Fragment"+storename);
+        if (userbool==true){
+            reference= FirebaseDatabase.getInstance().getReference("Profile Creation AsNanny");
+            checkuser=reference.orderByChild("username").equalTo(storename);
+            checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()){
+                        String usernamefromdb = dataSnapshot.child(storename).child("username").getValue(String.class);
+                        if (usernamefromdb.equals(storename)){
+
+                            Toast.makeText(Main2Activity.this,"Profile Created",Toast.LENGTH_LONG);
+                        }
+                        else {
+                            Toast.makeText(Main2Activity.this,"Create Your Profile",Toast.LENGTH_LONG);
+                        }
+                    }
+                    else {
+                        Toast.makeText(Main2Activity.this,"Create Your Profile AsNanny",Toast.LENGTH_LONG).show();
+                        Intent intent=new Intent(getApplicationContext(),ProfileCreationAsNanny.class);
+                        startActivity(intent);
+                    }
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        }
+        else {
+
+            reference2=FirebaseDatabase.getInstance().getReference("Profile Creation For Nanny");
+            checkuser2=reference2.orderByChild("username").equalTo(storename);
+            checkuser2.addListenerForSingleValueEvent(new ValueEventListener() {
+                @Override
+                public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                    if (dataSnapshot.exists()){
+                        String usernamedb2= dataSnapshot.child(storename).child("username").getValue(String.class);
+
+                        if (usernamedb2.equals(storename)){
+                            Toast.makeText(Main2Activity.this,"Profile Created",Toast.LENGTH_LONG);
+
+                        }
+                        else {
+                            Toast.makeText(Main2Activity.this,"Create Your Profile",Toast.LENGTH_LONG);
+
+                        }
+
+                    }
+                    else {
+                        Toast.makeText(Main2Activity.this,"Create Your Profile As For Nanny",Toast.LENGTH_LONG).show();
+                        Intent intent=new Intent(getApplicationContext(),ProfileCreationForNanny.class);
+                        startActivity(intent);
+
+                    }
+
+                }
+
+                @Override
+                public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                }
+            });
+
+        }
 
 
+}
 }

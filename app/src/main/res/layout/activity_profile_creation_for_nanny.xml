@@ -35,7 +35,7 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="10dp"
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
@@ -199,13 +199,23 @@
         <Button
         android:id="@+id/savebtn"
         android:gravity="center"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
         android:background="@drawable/custom_button"
         android:textColor="#FFFFFF"
         android:text="SaveDetails" />
+    <Button
+        android:id="@+id/update"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/custom_button"
+        android:textColor="#FFFFFF"
+        android:text="UpdateDetails" />
 
 </LinearLayout>
 
