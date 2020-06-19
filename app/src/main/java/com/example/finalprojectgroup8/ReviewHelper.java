@@ -1,10 +1,11 @@
 package com.example.finalprojectgroup8;
 
 public class ReviewHelper {
-    String description,rating,reviewerid,username,reviewid;
+    String description,reviewerid,username,reviewid;
+    int rating;
 
 
-    public ReviewHelper(String description, String rating, String reviewerid, String userid,String reviewid) {
+    public ReviewHelper(String description, int rating, String reviewerid, String userid, String reviewid) {
         this.description = description;
         this.rating = rating;
         this.reviewerid = reviewerid;
@@ -32,7 +33,7 @@ public class ReviewHelper {
         return description;
     }
 
-    public String getRating() {
+    public int getRating() {
         return rating;
     }
 
@@ -44,7 +45,7 @@ public class ReviewHelper {
         this.description = description;
     }
 
-    public void setRating(String rating) {
+    public void setRating(int rating) {
         this.rating = rating;
     }
 

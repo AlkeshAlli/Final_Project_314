@@ -12,7 +12,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".DetailsForNanny"></activity>
+        <activity android:name=".Availability"></activity>
+        <activity android:name=".DetailsForNanny" />
         <activity android:name=".Rating" />
         <activity android:name=".Main2Activity" />
         <activity android:name=".DetailsActivity" />

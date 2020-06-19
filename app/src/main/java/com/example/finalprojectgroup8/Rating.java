@@ -19,16 +19,17 @@ import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
 public class Rating extends AppCompatActivity {
     FirebaseDatabase rootnode;
-    DatabaseReference reference,newreference;
+    DatabaseReference reference,newreference,subref;
     EditText mFeedback;
     TextView mRatingScale;
-    String username;
+    String userdata;
     String rating, review,reviewid,reviewerid,userid, usernamesession;
-    int countreviews;
+    int countreviews=0,flag=0,ratingvalue;
 
 
     @Override
@@ -40,88 +41,94 @@ public class Rating extends AppCompatActivity {
         mFeedback = findViewById(R.id.etFeedback);
         final Button mSendFeedback = findViewById(R.id.btnSubmit);
 
-        username = getIntent().getStringExtra("username").toString();
+        userdata = getIntent().getStringExtra("username").toString();
         mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
                 mRatingScale.setText(String.valueOf(v));
                 switch ((int) ratingBar.getRating()) {
                     case 1:
-                        mRatingScale.setText("Very bad");
+                        mRatingScale.setText("Very bad : 1");
+                        ratingvalue=1;
                         break;
                     case 2:
-                        mRatingScale.setText("Need some improvement");
+                        mRatingScale.setText("Need some improvement : 2");
+                        ratingvalue=2;
                         break;
                     case 3:
-                        mRatingScale.setText("Good");
+                        mRatingScale.setText("Good : 3");
+                        ratingvalue=3;
                         break;
                     case 4:
-                        mRatingScale.setText("Great");
+                        mRatingScale.setText("Great :4");
+                        ratingvalue=4;
                         break;
                     case 5:
-                        mRatingScale.setText("Awesome. I love it");
+                        mRatingScale.setText("Awesome. I love it : 5");
+                        ratingvalue=5;
                         break;
                     default:
                         mRatingScale.setText("");
                 }
             }
         });
+
         SharedPreferences preferences = this.getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
         usernamesession = preferences.getString("username", null);
-        Log.i("check","session"+usernamesession);
+        review = mFeedback.getText().toString();
+        reviewerid = usernamesession;
+        userid=userdata;
 
-            reference = FirebaseDatabase.getInstance().getReference("review");
-            mSendFeedback.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    if (mFeedback.getText().toString().isEmpty()) {
-                        Toast.makeText(Rating.this, "Please fill in feedback text box", Toast.LENGTH_LONG).show();
-                    } else {
-
-                        //  mFeedback.setText("");
-                        //  mRatingBar.setRating(0);
-                        reference.child(username).addValueEventListener(new ValueEventListener() {
-                            @Override
-                            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                                if(dataSnapshot.exists())
-                                {
-                                    countreviews=(int) dataSnapshot.getChildrenCount();
-                                    Log.d("Reviews count", String.valueOf(countreviews));
-                                    reviewid="review"+(countreviews+1);
-                                }
-                                else
-                                {
-                                    reviewid="review1";
-                                }
+        mSendFeedback.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                if (mFeedback.getText().toString().isEmpty()) {
+                    Toast.makeText(Rating.this, "Please fill in feedback text box", Toast.LENGTH_LONG).show();
+                } else{
+                    review = mFeedback.getText().toString();
+                    reference = FirebaseDatabase.getInstance().getReference("reviews");
+                    reference = reference.child(userid);
+                    Query rootdata = reference.orderByChild("reviewid");
+                    rootdata.addListenerForSingleValueEvent(new ValueEventListener() {
+                        @Override
+                        public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            if(dataSnapshot.exists()) {
+                                countreviews = (int) dataSnapshot.getChildrenCount();
+                                countreviews=countreviews-1;
                             }
-
-                            @Override
-                            public void onCancelled(@NonNull DatabaseError databaseError) {
-
+                            else
+                            {
+                                reviewid="review1";
                             }
-                        });
-                        rating = mRatingScale.getText().toString();
-                        review = mFeedback.getText().toString();
-                        reviewerid = usernamesession;
-                        //userid = mFeedback.getText().toString();
-                        userid=username;
-                        addreview();
-                        Toast.makeText(Rating.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
-                    }
+                            reviewid="review"+(countreviews+1);
+                            Log.d("Reviews count",countreviews+"   user "+userid);
+                            addreview(reviewid);
+                            Log.d("review",reviewid);
+                        }
+
+                        @Override
+                        public void onCancelled(@NonNull DatabaseError databaseError) {
+
+                        }
+
+                    });
+
+                    Toast.makeText(Rating.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
+                    finish();
                 }
-            });
-
-        }
-    private void addreview() {
-        rootnode = FirebaseDatabase.getInstance();
-        reference = rootnode.getReference("reviews");
-        newreference = reference.push();
-        ReviewHelper ReviewHelper = new ReviewHelper(review, rating, reviewerid, userid,reviewid);
-        newreference.child(userid).setValue(ReviewHelper);
-        String key = newreference.child(userid).getKey();
-        Log.i("key","rating"+key);
+            }
+        });
 
     }
-
-
+    private void addreview(String review1id) {
+        rootnode = FirebaseDatabase.getInstance();
+        reference = rootnode.getReference("reviews");
+        ReviewHelper Reviewhelper = new ReviewHelper(review, ratingvalue, reviewerid, userid, review1id);
+        Log.d("check id", review1id);
+        newreference = reference.child(userid);
+        // newreference.removeValue();
+        newreference.child("username").setValue(userid);
+        subref = newreference.child(review1id);
+        subref.setValue(Reviewhelper);
+    }
 }

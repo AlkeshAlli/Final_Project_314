@@ -27,7 +27,7 @@ public class ViewFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-       View v =inflater.inflate(R.layout.fragment_view, container, false);
+        View v =inflater.inflate(R.layout.fragment_view, container, false);
         Button crte = v.findViewById(R.id.create);
         Button udate = v.findViewById(R.id.update);
         crte.setOnClickListener(new View.OnClickListener() {
@@ -45,6 +45,13 @@ public class ViewFragment extends Fragment {
                     Intent intent=new Intent(getActivity(),ProfileCreationForNanny.class);
                     startActivity(intent);
                 }
+            }
+        });
+        udate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(getActivity(),Availability.class);
+                startActivity(intent);
             }
         });
 

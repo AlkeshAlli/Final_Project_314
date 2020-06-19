@@ -11,183 +11,29 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4b1e6537-1734-4146-910d-556f1295c2e2" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/assetWizardSettings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/render.experimental.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/anim/bottom_animation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/anim/top_animation.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/custom_button.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_account_circle_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_description_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_enhanced_encryption_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_local_phone_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_location_on_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_mail_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_person_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/drawable/ic_baseline_vpn_key_24.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/bangers.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/boogaloo.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/bungee.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/Bungee-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeHairline-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeInline-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeOutline-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Basic/BungeeShade-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_colr_Windows.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_sbix_MacOS.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Color_Fonts/BungeeColor-Regular_svg.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Hairline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Inline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Outline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/Bungee/Bungee-Shade.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Inline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Outline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayers/BungeeLayers-Shade.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Inline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Outline.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Regular.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Desktop/BungeeLayersRotated/BungeeLayersRotated-Shade.otf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Hairline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Hairline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Hairline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Inline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Inline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Inline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Outline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Outline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Outline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Shade.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Shade.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/Bungee/Bungee-Shade.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Inline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Inline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Inline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Outline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Outline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Outline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Shade.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Shade.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayers/BungeeLayers-Shade.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Inline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Inline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Inline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Outline.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Outline.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Outline.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Regular.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Regular.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Regular.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Shade.eot" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Shade.woff" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/font/fonts/Bungee_Web/BungeeLayersRotated/BungeeLayersRotated-Shade.woff2" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/values/font_certs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/res/values/preloaded_fonts.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/caches/build_file_checksums.ser" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_activity_activity_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_annotation_annotation_1_1_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_appcompat_appcompat_resources_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_common_2_1_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_arch_core_core_runtime_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_asynclayoutinflater_asynclayoutinflater_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cardview_cardview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_collection_collection_1_1_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_1_1_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_constraintlayout_constraintlayout_solver_1_1_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_coordinatorlayout_coordinatorlayout_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_core_core_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_cursoradapter_cursoradapter_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_customview_customview_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_documentfile_documentfile_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_drawerlayout_drawerlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_fragment_fragment_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_interpolator_interpolator_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_ui_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_core_utils_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_legacy_legacy_support_v4_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_common_2_1_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_livedata_core_2_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_runtime_2_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_lifecycle_lifecycle_viewmodel_2_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_loader_loader_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_localbroadcastmanager_localbroadcastmanager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_media_media_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_print_print_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_recyclerview_recyclerview_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_savedstate_savedstate_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_slidingpanelayout_slidingpanelayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_swiperefreshlayout_swiperefreshlayout_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_core_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_core_3_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_espresso_espresso_idling_resource_3_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_ext_junit_1_1_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_monitor_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_test_runner_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_transition_transition_1_2_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_vectordrawable_vectordrawable_animated_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_versionedparcelable_versionedparcelable_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager2_viewpager2_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__androidx_viewpager_viewpager_1_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_base_16_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_basement_16_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_flags_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_flags_16_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_gms_play_services_tasks_16_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_1_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_android_material_material_1_1_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_code_findbugs_jsr305_2_0_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_0_5_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_16_0_5_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_16_0_1_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_auth_interop_16_0_1_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_3_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_common_16_0_3_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_16_0_4_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_16_0_4_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_16_0_0_aar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_google_firebase_firebase_database_collection_16_0_0_aar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__com_squareup_javawriter_2_1_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__javax_inject_javax_inject_1_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__junit_junit_4_12_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__net_sf_kxml_kxml2_2_3_0_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_core_1_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_integration_1_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/libraries/Gradle__org_hamcrest_hamcrest_library_1_3_jar.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/local.properties" beforeDir="false" afterPath="$PROJECT_DIR$/local.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/AndroidManifest.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/MainActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/finalprojectgroup8/MainActivity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/drawable/logo.jpg" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/drawable/logo.jpg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_details.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_details.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_details_for_nanny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_details_for_nanny.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_login.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_main2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_main2.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_as_nanny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_as_nanny.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_for_nanny.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_profile_creation_for_nanny.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_rating.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_rating.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/activity_register.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/activity_register.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/app_bar_main.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_home.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_logout.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_logout.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_update.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_update.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/fragment_view.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/fragment_view.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/layout/my_row.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/layout/my_row.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/res/values/styles.xml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/res/values/styles.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid12120.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid12232.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid18624.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid19424.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid4744.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid5000.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../hs_err_pid9636.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid12120.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid12232.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid18624.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid19424.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid4744.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid5000.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../replay_pid9636.log" beforeDir="false" />
     </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_XL_API_R" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="Pixel_2_XL_API_22" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -223,7 +69,7 @@
     <property name="DeviceAndSnapshotComboBoxAction.selectionTime" value="2020-06-10T03:17:58.365Z" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="android.sdk.path" value="$USER_HOME$/Library/Android/sdk" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/res/font" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/.." />
     <property name="project.structure.last.edited" value="Dependencies" />
     <property name="project.structure.proportion" value="0.17" />
     <property name="project.structure.side.proportion" value="0.2" />
@@ -238,7 +84,19 @@
       <recent name="$PROJECT_DIR$/src/main/res/layout" />
     </key>
   </component>
-  <component name="RunManager" selected="Android App.latest-app">
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="RunManager" selected="Android App.app">
     <configuration default="true" type="AndroidJUnit" factoryName="Android JUnit">
       <option name="TEST_OBJECT" value="class" />
       <option name="WORKING_DIRECTORY" value="$MODULE_DIR$" />

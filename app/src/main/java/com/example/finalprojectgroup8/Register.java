@@ -97,7 +97,7 @@ public class Register extends AppCompatActivity {
     private void RigisterasNanny() {
         rootnode=FirebaseDatabase.getInstance();
         reference=rootnode.getReference("Register As Nanny");
-        JavaHelperClass javaHelperClass = new JavaHelperClass(username,testemail,testphone,testpass,testreview);
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username,testemail,testphone,testpass);
         reference.child(username).setValue(javaHelperClass);
         Intent intent=new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
@@ -106,8 +106,9 @@ public class Register extends AppCompatActivity {
     private void Rigisterfornanny() {
         rootnode=FirebaseDatabase.getInstance();
         reference=rootnode.getReference("Register For Nanny");
-        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone,testpass,testreview);
+        JavaHelperClass javaHelperClass = new JavaHelperClass(username, testemail, testphone,testpass);
         reference.child(username).setValue(javaHelperClass);
+        Log.d("Awesome",testemail);
         Intent intent=new Intent(getApplicationContext(),Login.class);
         startActivity(intent);
     }
