@@ -94,15 +94,16 @@ public class Rating extends AppCompatActivity {
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                             if(dataSnapshot.exists()) {
                                 countreviews = (int) dataSnapshot.getChildrenCount();
-                                countreviews=countreviews-1;
+                                //countreviews=countreviews-1;
                             }
                             else
                             {
                                 reviewid="review1";
                             }
-                            reviewid="review"+(countreviews+1);
+                            reviewid="review"+(countreviews);
                             Log.d("Reviews count",countreviews+"   user "+userid);
                             addreview(reviewid);
+                            // Calculate_Avg cal = new Calculate_Avg(userid);
                             Log.d("review",reviewid);
                         }
 

@@ -77,13 +77,6 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
             }
         });
 
-        updatebutton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                updatedetailsforasNanny();
-                Toast.makeText(ProfileCreationAsNanny.this, "Profile Details Updated Successfully", Toast.LENGTH_SHORT).show();
-            }
-        });
     }
 
     public void senddatatodatabase(){
@@ -163,57 +156,6 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
         editdescrip.setText(showdescp);
     }
 
-    public void updatedetailsforasNanny(){
-        //Conditionsforfields();
-        saveage=editage.getText().toString();
-        Log.i("Check","agelabel"+saveage);
-        savedescrip=editdescrip.getText().toString();
-        saveloc=editlocation.getText().toString();
-        savefname=editfullname.getText().toString();
-        saveexp=editexperience.getText().toString();
-        savehour=editperhour.getText().toString();
-
-        reference=FirebaseDatabase.getInstance().getReference("Profile Creation AsNanny");
-        Query checkupdateuser=reference.orderByChild("username").equalTo(userfromsession);
-        checkupdateuser.addListenerForSingleValueEvent(new ValueEventListener() {
-            @Override
-            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                if (dataSnapshot.exists()){
-                    String agefromdb= dataSnapshot.child(userfromsession).child("age").getValue(String.class);
-                    String desfromdb= dataSnapshot.child(userfromsession).child("description").getValue(String.class);
-                    String locfromdb= dataSnapshot.child(userfromsession).child("location").getValue(String.class);
-                    String ratefromdb= dataSnapshot.child(userfromsession).child("rate").getValue(String.class);
-                    String expfromdb= dataSnapshot.child(userfromsession).child("experience").getValue(String.class);
-                    String fnamefromdb= dataSnapshot.child(userfromsession).child("fullname").getValue(String.class);
-
-                    if (!agefromdb.equals(saveage)){
-                        reference.child(userfromsession).child("age").setValue(saveage);
-                    }
-                    if (!desfromdb.equals(savedescrip)){
-                        reference.child(userfromsession).child("description").setValue(savedescrip);
-                    }
-                    if (!locfromdb.equals(saveloc)){
-                        reference.child(userfromsession).child("location").setValue(saveloc);
-                    }
-                    if (!ratefromdb.equals(savehour)){
-                        reference.child(userfromsession).child("rate").setValue(savehour);
-                    }
-                    if (!expfromdb.equals(saveexp)){
-                        reference.child(userfromsession).child("experience").setValue(saveexp);
-                    }
-                    if (!fnamefromdb.equals(savefname)){
-                        reference.child(userfromsession).child("fullname").setValue(savefname);
-                    }
-                }
-            }
-
-            @Override
-            public void onCancelled(@NonNull DatabaseError databaseError) {
-
-            }
-        });
-
-    }
 
 
 }

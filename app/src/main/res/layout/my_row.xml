@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         cardview:cardPreventCornerOverlap="false"
-        cardview:cardElevation="0dp"
+        cardview:cardElevation="4dp"
         cardview:cardMaxElevation="0dp"
         app:layout_constraintTop_toTopOf="parent">
 
