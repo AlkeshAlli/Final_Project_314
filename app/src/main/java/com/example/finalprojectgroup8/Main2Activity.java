@@ -125,7 +125,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         } else if (id == R.id.bstemp) {
             BempFragment fragment = new BempFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Best Employee");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "Best Employer");
             fragmentTransaction.commit();
         } else if (id == R.id.lgout) {
             LogoutFragment fragment = new LogoutFragment();

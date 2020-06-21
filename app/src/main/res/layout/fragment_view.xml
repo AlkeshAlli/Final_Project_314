@@ -9,7 +9,7 @@
         android:id="@+id/update"
         android:layout_width="300dp"
         android:layout_height="37dp"
-        android:text="Update Profile"
+        android:text="Profile Already Created"
         android:background="@drawable/custom_button"
         android:textColor="#FFFFFF"
         android:layout_marginBottom="-120dp"

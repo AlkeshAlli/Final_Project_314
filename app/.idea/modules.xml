@@ -3,6 +3,8 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/app.iml" filepath="$PROJECT_DIR$/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/balne-app.iml" filepath="$PROJECT_DIR$/.idea/modules/balne-app.iml" group="finalprojectgroup8/app" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/-1745599507/balne-finalprojectgroup8.iml" filepath="$PROJECT_DIR$/.idea/modules/-1745599507/balne-finalprojectgroup8.iml" group="finalprojectgroup8" />
       <module fileurl="file://$PROJECT_DIR$/../finalprojectgroup8.iml" filepath="$PROJECT_DIR$/../finalprojectgroup8.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/finalprojectgroup8-app.iml" filepath="$PROJECT_DIR$/.idea/modules/finalprojectgroup8-app.iml" group="finalprojectgroup8/app" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/latest-app.iml" filepath="$PROJECT_DIR$/.idea/modules/latest-app.iml" group="finalprojectgroup8/app" />

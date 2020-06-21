@@ -1,5 +1,6 @@
 package com.example.finalprojectgroup8;
 
+import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
@@ -8,6 +9,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -30,12 +32,14 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
     String saveage,savedescrip,saveloc,savefname,saveexp,savehour;
     Button save,updatebutton;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference reference;
+    DatabaseReference reference,reference2;
+    CheckBox forkids,forold,forboth;
     SharedPreferences preferences;
     String userfromsession;
     JavaDetailsCreationClass Creationdetails;
     Boolean userbool, flagcheck=false;
     String showage,showdescp,showloc,showrate,showfname,showexp;
+    int status;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -51,6 +55,9 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
         editlocation = findViewById(R.id.editloc);
         editdescrip = findViewById(R.id.editdescription);
         save = findViewById(R.id.savebtn);
+        forkids=findViewById(R.id.child);
+        forold=findViewById(R.id.old);
+        forboth=findViewById(R.id.both);
         updatebutton=findViewById(R.id.update);
         textView=findViewById(R.id.textwelcome);
 
@@ -72,10 +79,11 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
                 if (flagcheck == false);
                 senddatatodatabase();
                 Toast.makeText(ProfileCreationAsNanny.this,"Profile Created Successfully",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ProfileCreationAsNanny.this,Main2Activity.class);
+                Intent intent = new Intent(ProfileCreationAsNanny.this, Availability.class);
                 startActivity(intent);
             }
         });
+
 
     }
 
@@ -93,6 +101,20 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
         Creationdetails.setFullname(savefname);
         Creationdetails.setUsername(userfromsession);
         reference.child(userfromsession).setValue(Creationdetails);
+        reference2=reference.child(userfromsession);
+        if (forkids.isChecked()){
+            status = 1;
+        }
+
+        if (forold.isChecked()){
+            status = 2;
+        }
+
+        if (forboth.isChecked()){
+            status = 3;
+        }
+        reference2.child("Service Provide").setValue(status);
+        finish();
     }
 
 
@@ -155,6 +177,7 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
         editdescrip = findViewById(R.id.editdescription);
         editdescrip.setText(showdescp);
     }
+
 
 
 

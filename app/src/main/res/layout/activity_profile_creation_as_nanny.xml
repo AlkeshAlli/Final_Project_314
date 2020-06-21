@@ -59,7 +59,7 @@
                 <EditText
                     android:id="@+id/editfname"
                     android:singleLine="true"
-                    android:hint="Username"
+                    android:hint="Full Name"
                     android:inputType="text"
                     android:background="#FFFFFF"
                     android:drawableStart="@drawable/ic_baseline_person_24"
@@ -147,26 +147,26 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:orientation="horizontal">
-<androidx.cardview.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:card_view="http://schemas.android.com/apk/res-auto"
-    android:layout_marginLeft="10dp"
-    android:layout_marginRight="20dp"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    card_view:cardCornerRadius="6dp"
-    card_view:cardElevation="6dp">
+        <androidx.cardview.widget.CardView
+            xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:card_view="http://schemas.android.com/apk/res-auto"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="20dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            card_view:cardCornerRadius="6dp"
+            card_view:cardElevation="6dp">
 
-    <EditText
-        android:id="@+id/editage"
-        android:gravity="center"
-        android:layout_width="110dp"
-        android:layout_height="40dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="Age" />
+            <EditText
+                android:id="@+id/editage"
+                android:gravity="center"
+                android:layout_width="110dp"
+                android:layout_height="40dp"
+                android:ems="10"
+                android:inputType="textPersonName"
+                android:hint="Age" />
 
-</androidx.cardview.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
             android:layout_marginLeft="5dp"
@@ -181,7 +181,6 @@
                 android:id="@+id/editexp"
                 android:layout_width="110dp"
                 android:layout_height="40dp"
-
                 android:ems="10"
                 android:gravity="center"
                 android:hint="Experience"
@@ -200,15 +199,43 @@
             card_view:cardElevation="6dp">
 
 
-        <EditText
-            android:id="@+id/edithour"
-            android:layout_width="125dp"
-            android:layout_height="match_parent"
-            android:ems="10"
-            android:gravity="center"
-            android:hint="Per Hour Rate"
-            android:inputType="textPersonName" />
+            <EditText
+                android:id="@+id/edithour"
+                android:layout_width="125dp"
+                android:layout_height="match_parent"
+                android:ems="10"
+                android:gravity="center"
+                android:hint="Per Hour Rate"
+                android:inputType="textPersonName" />
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <CheckBox
+            android:id="@+id/child"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:text="For Children"
+            android:textSize="18sp">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/old"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:text="Old People"
+            android:textSize="18sp">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/both"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:text="For Both"
+            android:textSize="18sp">
+        </CheckBox>
+
     </LinearLayout>
 
     <Button
@@ -222,8 +249,5 @@
         android:textColor="#FFFFFF"
         android:text="SaveDetails" />
 
+
 </LinearLayout>
-
-
-
-

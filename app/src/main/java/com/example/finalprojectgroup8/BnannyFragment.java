@@ -79,7 +79,7 @@ public class BnannyFragment extends Fragment {
                                 user = user + "\n" + childdata.getKey();
                             }
                             datalist.setText(user);
-                            rate.setText("Best Employers ");
+                            rate.setText("Best Nannies ");
                         }
                     }
 

@@ -22,7 +22,7 @@
             android:icon="@drawable/ic_action_bnanny"/>
         <item
             android:id="@+id/bstemp"
-            android:title="Best Employee"
+            android:title="Best Employer"
             android:icon="@drawable/ic_action_bemp"/>
 
 

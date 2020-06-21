@@ -90,6 +90,8 @@ public class Availability extends AppCompatActivity {
                 subref.child("saturday").setValue(bsat);
 
                 finish();
+                Intent intent = new Intent(getApplicationContext(),Main2Activity.class);
+                startActivity(intent);
             }
 
         });

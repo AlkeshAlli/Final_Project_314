@@ -61,7 +61,7 @@
                 <EditText
                     android:id="@+id/editfname"
                     android:singleLine="true"
-                    android:hint="Username"
+                    android:hint="Full Name"
                     android:inputType="text"
                     android:background="#FFFFFF"
                     android:drawableStart="@drawable/ic_baseline_person_24"
@@ -195,8 +195,37 @@
 
     </LinearLayout>
 
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp">
+        <CheckBox
+            android:id="@+id/child"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:text="ForKids"
+            android:textSize="18sp">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/old"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:text="ForOld"
+            android:textSize="18sp">
+        </CheckBox>
+        <CheckBox
+            android:id="@+id/both"
+            android:layout_width="130dp"
+            android:layout_height="39dp"
+            android:layout_marginLeft="10dp"
+            android:text="For Both"
+            android:textSize="18sp">
+        </CheckBox>
 
-        <Button
+    </LinearLayout>
+
+
+    <Button
         android:id="@+id/savebtn"
         android:gravity="center"
         android:layout_marginTop="20dp"
@@ -208,7 +237,3 @@
         android:text="SaveDetails" />
 
 </LinearLayout>
-
-
-
-

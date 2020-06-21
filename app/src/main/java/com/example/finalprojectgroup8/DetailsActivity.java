@@ -3,10 +3,13 @@ package com.example.finalprojectgroup8;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.res.ColorStateList;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -24,11 +27,13 @@ import com.google.firebase.database.ValueEventListener;
 public class DetailsActivity extends AppCompatActivity {
     ImageView profilepicture;
     TextView profilename,profilelocation,profiledescription,profilewage,profileexperience,profileage;
+    CheckBox checkbox1,checkbox2,checkbox3,checkbox4,checkbox5,checkbox6,checkbox7;
+
     //TextView profileemail;
     Button rate;
 
     String name;
-    //String storeusername, email;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -43,10 +48,20 @@ public class DetailsActivity extends AppCompatActivity {
         //profileemail = findViewById(R.id.asprofileemail);
         profileexperience = findViewById(R.id.asprofileexperience);
         profilewage = findViewById(R.id.asprofilewage);
+        checkbox1 = findViewById(R.id.sun);
+        checkbox2 = findViewById(R.id.mon);
+        checkbox3 = findViewById(R.id.tue);
+        checkbox4 = findViewById(R.id.wed);
+        checkbox5 = findViewById(R.id.thu);
+        checkbox6 = findViewById(R.id.fri);
+        checkbox7 = findViewById(R.id.sat);
+
+
         rate = findViewById(R.id.asrate);
         //storeusername = getIntent().getStringExtra("takeusername");
         check();
         setData();
+        availabilitydata();
         rate.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -100,5 +115,48 @@ public class DetailsActivity extends AppCompatActivity {
             }
         });
 
+    }
+    private void availabilitydata(){
+        DatabaseReference availablereference = FirebaseDatabase.getInstance().getReference().child("Profile Creation AsNanny");
+        availablereference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                boolean sunday = (boolean)dataSnapshot.child(name).child("availability").child("sunday").getValue(boolean.class);
+                boolean monday = (boolean)dataSnapshot.child(name).child("availability").child("monday").getValue(boolean.class);
+                boolean tuesday = (boolean)dataSnapshot.child(name).child("availability").child("tuesday").getValue(boolean.class);
+                boolean wednesday = (boolean)dataSnapshot.child(name).child("availability").child("wednesday").getValue(boolean.class);
+                boolean thursday = (boolean)dataSnapshot.child(name).child("availability").child("thursday").getValue(boolean.class);
+                boolean friday = (boolean)dataSnapshot.child(name).child("availability").child("friday").getValue(boolean.class);
+                boolean saturday = (boolean)dataSnapshot.child(name).child("availability").child("saturday").getValue(boolean.class);
+                if(sunday){
+                    checkbox1.setChecked(true);
+                }
+                if(monday){
+                    checkbox2.setChecked(true);
+                }
+                if(tuesday){
+                    checkbox3.setChecked(true);
+                }
+                if(wednesday){
+                    checkbox4.setChecked(true);
+                }
+                if(thursday){
+                    checkbox5.setChecked(true);
+                }
+                if(friday){
+                    checkbox6.setChecked(true);
+                }
+                if(saturday){
+                    checkbox7.setChecked(true);
+                }
+
+
+
+            }
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 }

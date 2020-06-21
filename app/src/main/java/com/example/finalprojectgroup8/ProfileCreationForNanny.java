@@ -8,6 +8,7 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -28,12 +29,14 @@ public class ProfileCreationForNanny extends AppCompatActivity {
     TextView textView;
     Button save,updatebutton;
     FirebaseDatabase firebaseDatabase;
-    DatabaseReference reference;
+    DatabaseReference reference,reference2;
     SharedPreferences preferences;
     String userfromsession;
     JavaDetailsCreationClass Creationdetails;
     Boolean flagcheck=false;
+    CheckBox forkids,forold,forboth;
     String showdescp,showloc,showfname,showrate,showchild;
+    int status;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -47,6 +50,9 @@ public class ProfileCreationForNanny extends AppCompatActivity {
         editchildren= findViewById(R.id.editkids);
         updatebutton= findViewById(R.id.update);
         save = findViewById(R.id.savebtn);
+        forkids=findViewById(R.id.child);
+        forold=findViewById(R.id.old);
+        forboth=findViewById(R.id.both);
         textView=findViewById(R.id.textwelcome);
 
 
@@ -70,6 +76,7 @@ public class ProfileCreationForNanny extends AppCompatActivity {
             }
         });
 
+
     }
 
 
@@ -83,9 +90,21 @@ public class ProfileCreationForNanny extends AppCompatActivity {
         Creationdetails.setRate(savehour);
         Creationdetails.setDescription(savedescrip);
         Creationdetails.setFullname(savefname);
-        Creationdetails.setChildren(savechild);
+        Creationdetails.setPersons(savechild);
         Creationdetails.setUsername(userfromsession);
         reference.child(userfromsession).setValue(Creationdetails);
+        reference2=reference.child(userfromsession);
+        if (forkids.isChecked()){
+            status =1;
+        }
+        if (forold.isChecked()){
+            status = 2;
+        }
+        if (forboth.isChecked()){
+            status =3;
+        }
+        reference2.child("Need Service").setValue(status);
+        finish();
 
 
     }
@@ -141,11 +160,4 @@ public class ProfileCreationForNanny extends AppCompatActivity {
         editchildren = findViewById(R.id.editkids);
         editchildren.setText(showchild);
     }
-
-
-
-
-
-
-
 }
