@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.CheckBox;
+import android.widget.TextView;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -17,10 +18,12 @@ import java.util.ArrayList;
 
 public class Availability extends AppCompatActivity {
     CheckBox sun,mon,tue,wed,thurs,fri,sat;
+    TextView headi;
     Boolean bsun,bmon,btue,bwed,bthurs,bfri,bsat;
     Button setav;
     String usernamesession;
     FirebaseDatabase rootnode;
+    String status;
     DatabaseReference reference,newreference,subref;
 
 
@@ -42,11 +45,15 @@ public class Availability extends AppCompatActivity {
         if(userbool == true)
         {
             reference = FirebaseDatabase.getInstance().getReference("Profile Creation AsNanny");
+            status = "Availability";
         }
         else
         {
             reference = FirebaseDatabase.getInstance().getReference("Profile Creation For Nanny");
+            status = "Requirement";
         }
+        headi = findViewById(R.id.data_status);
+        headi.setText(status);
         newreference = reference.child(usernamesession);
         subref = newreference.child("availability");
 

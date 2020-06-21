@@ -7,6 +7,7 @@
     android:layout_height="match_parent"
     android:id="@+id/nannyscroll"
     android:orientation="vertical"
+    android:background="#ffffff"
     tools:context=".ProfileCreationAsNanny">
 
 
@@ -23,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_gravity="center"
-        android:textColor="#8ec6eb"
+        android:textColor="#3990D5"
         android:fontFamily="@font/boogaloo"
         android:gravity="center"
         android:text="Welcome"

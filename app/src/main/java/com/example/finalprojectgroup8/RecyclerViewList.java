@@ -4,13 +4,23 @@ public class RecyclerViewList {
     String username;
     String location;
     String rate;
+    String service;
     public RecyclerViewList() {
     }
 
-    public RecyclerViewList(String username, String location,String rate) {
+    public RecyclerViewList(String username, String location,String rate,String service) {
         this.username = username;
         this.location = location;
         this.rate = rate;
+        this.service=service;
+    }
+
+    public String getService() {
+        return service;
+    }
+
+    public void setService(String service) {
+        this.service = service;
     }
 
     public String getRate() {

@@ -44,15 +44,15 @@ public class HomeFragment extends Fragment {
 
         if(preferences.getBoolean("asNanny",true)){
             //get the list forNanny users
-            getUsersList(view, "Profile Creation For Nanny");
+            getUsersList(view, "Profile Creation For Nanny","Need Service");
         }else{
             //get the list asNanny users
-            getUsersList(view, "Profile Creation AsNanny");
+            getUsersList(view, "Profile Creation AsNanny","Service Provide");
         }
         return view;
     }
 
-    public void getUsersList(View view,String childParam){
+    public void getUsersList(View view, String childParam, final String status_check){
         list = new ArrayList<RecyclerViewList>();
 
         recyclerView = view.findViewById(R.id.recyclerview);
@@ -66,10 +66,21 @@ public class HomeFragment extends Fragment {
 
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
                     String name,place,price;
+                    String serv_status;
+                    String Act_Serv;
                     name = dataSnapshot1.child("username").getValue(String.class);
                     place = dataSnapshot1.child("location").getValue(String.class);
                     price = dataSnapshot1.child("rate").getValue(String.class);
-                    RecyclerViewList r = new RecyclerViewList(name,place,price);
+                    serv_status = String.valueOf(dataSnapshot1.child(status_check).getValue(Integer.class));
+                    if(Integer.parseInt(serv_status)==1)
+                        Act_Serv="Only Children";
+                    else if(Integer.parseInt(serv_status)==2)
+                        Act_Serv="Only Oldsters";
+                    else if(Integer.parseInt(serv_status)==3)
+                        Act_Serv="Both";
+                    else
+                        Act_Serv="Not available";
+                    RecyclerViewList r = new RecyclerViewList(name,place,price,Act_Serv);
                     list.add(r);
                 }
 

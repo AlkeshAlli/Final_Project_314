@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:background="@drawable/background"
+    android:background="#ffffff"
     android:layout_width="match_parent"
-    android:layout_height="170dp"
+    android:layout_height="wrap_content"
     android:padding="16dp"
     >
 
@@ -11,15 +11,16 @@
         android:id="@+id/photo"
         android:layout_width="75dp"
         android:layout_height="75dp"
-        android:src="@mipmap/ic_launcher_round" />
+        android:src="@drawable/logo" />
+
 
     <TextView
         android:id="@+id/hedname"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
+        android:textColor="#3990D5"
         android:text="Baby Oldster Care Givers"
-        android:textColor="#FFFFFF"
         android:textSize="20sp"
         android:textStyle="bold" />
 
@@ -28,7 +29,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="babyoldstercaregivers@gmail.com"
-        android:textColor="#FFFFFF"
+        android:textColor="#3990D5"
+        android:textSize="20sp" />
+    <TextView
+        android:id="@+id/hedstatus"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="status"
+        android:textColor="#3990D5"
         android:textSize="20sp" />
 
 

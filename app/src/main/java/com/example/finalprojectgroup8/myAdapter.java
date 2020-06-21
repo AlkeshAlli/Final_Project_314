@@ -49,6 +49,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         holder.myText1.setText(recyclerViewLists.get(position).getUsername());
         holder.myText2.setText(recyclerViewLists.get(position).getLocation());
         holder.myText3.setText("$ "+recyclerViewLists.get(position).getRate());
+        holder.myText4.setText(recyclerViewLists.get(position).getService());
         holder.myImage.setImageResource(pic);
 
         SharedPreferences preferences = this.homeFragment.getActivity().getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
@@ -84,8 +85,8 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         return recyclerViewLists.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView myText1,myText2,myText3;
+    public static class MyViewHolder extends RecyclerView.ViewHolder{
+        TextView myText1,myText2,myText3,myText4;
         ImageView myImage;
         ConstraintLayout mainLayout;
         public MyViewHolder(@NonNull View itemView) {
@@ -93,6 +94,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
             myText1 = itemView.findViewById(R.id.username);
             myText2 = itemView.findViewById(R.id.mailid);
             myText3 = itemView.findViewById(R.id.recy_rate);
+            myText4 = itemView.findViewById(R.id.recy_status);
             myImage = itemView.findViewById(R.id.profileImage);
             mainLayout = itemView.findViewById(R.id.mainLayout);        }
     }

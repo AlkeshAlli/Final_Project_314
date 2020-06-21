@@ -3,7 +3,7 @@ package com.example.finalprojectgroup8;
 import android.media.Image;
 
 public class JavaDetailsCreationClass {
-    private  String fullname,location,description,username,age,rate,experience,persons;
+    private  String fullname,location,description,username,age,rate,experience,children;
 
     Image profileimage;
 
@@ -67,12 +67,13 @@ public class JavaDetailsCreationClass {
         this.experience = experience;
     }
 
-    public String getPersons() {
-        return persons;
+
+    public String getChildren() {
+        return children;
     }
 
-    public void setPersons(String persons) {
-        this.persons = persons;
+    public void setChildren(String children) {
+        this.children = children;
     }
 
     public Image getProfileimage() {

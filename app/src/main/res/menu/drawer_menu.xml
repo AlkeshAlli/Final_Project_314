@@ -11,7 +11,11 @@
         <item
             android:id="@+id/vp"
             android:icon="@drawable/ic_action_view"
-            android:title="Profile" />
+            android:title="Edit Profile" />
+        <item
+            android:id="@+id/appointment"
+            android:icon="@android:drawable/ic_menu_my_calendar"
+            android:title="Appointments" />
         <item
             android:id="@+id/review"
             android:title="My Reviews"

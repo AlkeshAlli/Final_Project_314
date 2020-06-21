@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".DetailsActivity">
 
     <ImageView
@@ -24,6 +25,7 @@
         android:layout_height="56dp"
         android:gravity="center"
         android:text="TextView"
+        android:textColor="#3990D5"
         android:textAlignment="center"
         android:textSize="40sp"
         android:textStyle="bold"
@@ -54,6 +56,7 @@
 
             <TextView
                 android:id="@+id/asprofilelocation"
+                android:textColor="#3990D5"
                 android:layout_width="356dp"
                 android:layout_height="43dp"
                 android:gravity="center"
@@ -80,13 +83,32 @@
 
             <TextView
                 android:id="@+id/asprofileexperience"
-                android:layout_width="356dp"
+                android:layout_width="134dp"
                 android:layout_height="43dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="#3990D5"
                 android:textSize="21sp"
                 android:textStyle="normal"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.101"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintVertical_bias="0.36" />
+
+            <TextView
+                android:id="@+id/asprofilewage"
+                android:layout_width="141dp"
+                android:layout_height="43dp"
+                android:gravity="center"
+                android:text="TextView"
+                android:textAlignment="center"
+                android:textColor="#3990D5"
+                android:textSize="21sp"
+                android:textStyle="normal"
+                android:layout_marginLeft="210sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
@@ -103,11 +125,10 @@
             app:cardCornerRadius="6dp"
             app:cardElevation="6dp"
             app:cardUseCompatPadding="true">
-
             <TextView
-                android:id="@+id/asprofilewage"
-                android:layout_width="356dp"
-                android:layout_height="43dp"
+                android:id="@+id/asstatus"
+                android:layout_width="352dp"
+                android:layout_height="66dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
@@ -117,8 +138,10 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#3990D5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.36" />
+
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
@@ -143,6 +166,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
                 app:layout_constraintStart_toStartOf="parent"
+                android:textColor="#3990D5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.36" />
         </androidx.cardview.widget.CardView>
@@ -165,6 +189,7 @@
                 android:textAlignment="center"
                 android:textSize="21sp"
                 android:textStyle="normal"
+                android:textColor="#3990D5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
@@ -182,10 +207,10 @@
         android:orientation="horizontal"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.86"
+        app:layout_constraintVertical_bias="0.908"
         tools:ignore="MissingConstraints">
 
         <LinearLayout
@@ -206,6 +231,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sun"
+                android:textColor="#3990D5"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -234,6 +260,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Mon"
+                android:textColor="#3990D5"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -262,6 +289,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Tue"
+                android:textColor="#3990D5"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -292,6 +320,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Wed"
+                android:textColor="#3990D5"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -322,6 +351,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Thu"
+                android:textColor="#3990D5"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -358,6 +388,7 @@
                 android:id="@+id/fri"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:textColor="#3990D5"
 
                 />
 
@@ -382,6 +413,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Sat"
+                android:textColor="#3990D5"
                 android:textSize="20sp" />
 
             <CheckBox
@@ -398,20 +430,54 @@
     </LinearLayout>
 
     <Button
-        android:id="@+id/asrate"
+     android:id="@+id/asrate"
+     android:layout_width="192dp"
+     android:layout_height="38dp"
+     android:background="@drawable/custom_button"
+     android:text="Reviews"
+     android:textAlignment="center"
+     android:textColor="#FFFFFF"
+
+
+     app:layout_constraintBottom_toBottomOf="parent"
+     app:layout_constraintEnd_toEndOf="parent"
+     app:layout_constraintHorizontal_bias="0.073"
+     app:layout_constraintStart_toStartOf="parent"
+     app:layout_constraintTop_toTopOf="parent"
+     app:layout_constraintVertical_bias="0.988" />
+
+    <Button
+        android:id="@+id/asmake"
         android:layout_width="192dp"
         android:layout_height="38dp"
         android:background="@drawable/custom_button"
-        android:text="Rate"
+        android:text="Make Appointment"
         android:textAlignment="center"
         android:textColor="#FFFFFF"
 
 
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.987" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="220dp"
+        android:layout_height="30dp"
+        android:text="Availability"
+        android:textColor="#3990D5"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.959" />
+        app:layout_constraintVertical_bias="0.809" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -16,7 +16,7 @@
         android:fontFamily="@font/boogaloo"
         android:layout_marginTop="100dp"
         android:text="LOGIN HERE"
-        android:textColor="#8ec6eb"
+        android:textColor="#3990D5"
         android:layout_gravity="center"
         android:textSize="30sp" />
     <LinearLayout

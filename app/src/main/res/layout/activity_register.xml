@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity"
+    android:background="#ffffff"
     android:orientation="vertical">
 
     <ImageView
@@ -21,7 +22,7 @@
         android:layout_gravity="center"
         android:fontFamily="@font/boogaloo"
         android:text="Register here"
-        android:textColor="#8ec6eb"
+        android:textColor="#3990D5"
         android:textSize="30sp" />
 
     <LinearLayout
@@ -179,7 +180,7 @@
         <Button
             android:id="@+id/signup"
             android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_height="36dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:background="@drawable/custom_button"
@@ -187,17 +188,17 @@
             android:textColor="#FFFFFF">
 
         </Button>
+
         <Button
             android:id="@+id/asignup"
-            android:layout_width="300dp"
-            android:layout_height="wrap_content"
+            android:layout_width="297dp"
+            android:layout_height="37dp"
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:layout_marginBottom="10dp"
-            android:text="Login"
-            android:textColor="#FFFFFF"
             android:background="@drawable/custom_button"
-            >
+            android:text="Login"
+            android:textColor="#FFFFFF">
 
         </Button>
 

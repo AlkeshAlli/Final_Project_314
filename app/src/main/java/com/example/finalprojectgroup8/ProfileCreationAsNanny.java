@@ -114,7 +114,6 @@ public class ProfileCreationAsNanny extends AppCompatActivity {
             status = 3;
         }
         reference2.child("Service Provide").setValue(status);
-        finish();
     }
 
 

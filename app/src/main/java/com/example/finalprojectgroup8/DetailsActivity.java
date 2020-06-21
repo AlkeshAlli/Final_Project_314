@@ -26,11 +26,11 @@ import com.google.firebase.database.ValueEventListener;
 
 public class DetailsActivity extends AppCompatActivity {
     ImageView profilepicture;
-    TextView profilename,profilelocation,profiledescription,profilewage,profileexperience,profileage;
+    TextView profilename,profilelocation,profiledescription,profilewage,profileexperience,profileage,profilestatus;
     CheckBox checkbox1,checkbox2,checkbox3,checkbox4,checkbox5,checkbox6,checkbox7;
 
     //TextView profileemail;
-    Button rate;
+    Button rate,makeappo;
 
     String name;
 
@@ -48,6 +48,7 @@ public class DetailsActivity extends AppCompatActivity {
         //profileemail = findViewById(R.id.asprofileemail);
         profileexperience = findViewById(R.id.asprofileexperience);
         profilewage = findViewById(R.id.asprofilewage);
+        profilestatus = findViewById(R.id.asstatus);
         checkbox1 = findViewById(R.id.sun);
         checkbox2 = findViewById(R.id.mon);
         checkbox3 = findViewById(R.id.tue);
@@ -58,6 +59,7 @@ public class DetailsActivity extends AppCompatActivity {
 
 
         rate = findViewById(R.id.asrate);
+        makeappo = findViewById(R.id.asmake);
         //storeusername = getIntent().getStringExtra("takeusername");
         check();
         setData();
@@ -69,6 +71,14 @@ public class DetailsActivity extends AppCompatActivity {
                 i.putExtra("username",name);
                 i.putExtra("status","As Nanny");
                 startActivity(i);
+            }
+        });
+        makeappo.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(DetailsActivity.this,Make_Appointment.class);
+                intent.putExtra("personname",name);
+                startActivity(intent);
             }
         });
     }
@@ -91,12 +101,25 @@ public class DetailsActivity extends AppCompatActivity {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
                 if(dataSnapshot.exists())
                 {
+                    String Act_Serv;
                     Log.d("name test",name);
                     String dbage= (String) dataSnapshot.child(name).child("age").getValue(String.class);
                     String dbwage= (String) dataSnapshot.child(name).child("rate").getValue(String.class);
                     String dblocation=dataSnapshot.child(name).child("location").getValue(String.class);
                     String dbexperience= (String) dataSnapshot.child(name).child("experience").getValue(String.class);
                     String dbdescription=dataSnapshot.child(name).child("description").getValue(String.class);
+                    String serv_status = String.valueOf(dataSnapshot.child("Service Provide").getValue(Integer.class));
+                    if (serv_status==null){
+                        serv_status="1000";
+                    }
+                    if(Integer.parseInt(serv_status)==1)
+                        Act_Serv="Only Children";
+                    else if(Integer.parseInt(serv_status)==2)
+                        Act_Serv="Only Oldsters";
+                    else if(Integer.parseInt(serv_status)==3)
+                        Act_Serv="Both";
+                    else
+                        Act_Serv="Not available";
                     int pic = R.drawable.logo;
                     profilepicture.setImageResource(pic);
                     profilename.setText(name);
@@ -105,6 +128,7 @@ public class DetailsActivity extends AppCompatActivity {
                     profiledescription.setText("Description: \n"+dbdescription);
                     profileexperience.setText("Experience "+dbexperience.toString()+" Years");
                     profilewage.setText("Expected Wage: $"+dbwage.toString());
+                    profilestatus.setText("Service data: "+Act_Serv);
 
                 }
             }

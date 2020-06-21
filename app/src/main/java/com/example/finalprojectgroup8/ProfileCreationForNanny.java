@@ -71,7 +71,7 @@ public class ProfileCreationForNanny extends AppCompatActivity {
                 senddatatodatabase();
 
                 Toast.makeText(ProfileCreationForNanny.this,"Profile Created Successfully",Toast.LENGTH_SHORT).show();
-                Intent intent = new Intent(ProfileCreationForNanny.this,Main2Activity.class);
+                Intent intent = new Intent(ProfileCreationForNanny.this,Availability.class);
                 startActivity(intent);
             }
         });
@@ -90,7 +90,7 @@ public class ProfileCreationForNanny extends AppCompatActivity {
         Creationdetails.setRate(savehour);
         Creationdetails.setDescription(savedescrip);
         Creationdetails.setFullname(savefname);
-        Creationdetails.setPersons(savechild);
+        Creationdetails.setChildren(savechild);
         Creationdetails.setUsername(userfromsession);
         reference.child(userfromsession).setValue(Creationdetails);
         reference2=reference.child(userfromsession);

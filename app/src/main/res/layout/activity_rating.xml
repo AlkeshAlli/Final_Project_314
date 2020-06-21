@@ -6,80 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".Rating">
 
-    <TextView
-        android:id="@+id/textView2"
-        android:layout_width="280dp"
-        android:layout_height="88dp"
-        android:gravity="center_horizontal"
-        android:text="We hope you enjoyed using the Application"
-        android:textSize="20sp"
-        android:textStyle="italic"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.085" />
-
     <RatingBar
         android:id="@+id/ratingBar"
         android:layout_width="246dp"
         android:layout_height="54dp"
-        android:layout_marginEnd="52dp"
-        android:layout_marginRight="52dp"
         android:numStars="5"
         android:rating="0"
         android:stepSize="1"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.725"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.239" />
+        app:layout_constraintTop_toBottomOf="@+id/rating_recy"
+        app:layout_constraintVertical_bias="0.123" />
 
     <TextView
         android:id="@+id/tvRatingScale"
         android:layout_width="186dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
+        android:layout_marginTop="11dp"
+        android:layout_marginBottom="132dp"
+        android:gravity="center"
         android:text="Awesome. I love it"
+        android:textAlignment="center"
         android:textSize="16sp"
         android:textStyle="bold"
-        android:textAlignment="center"
-        android:gravity="center"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.357" />
+        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
 
     <EditText
         android:id="@+id/etFeedback"
         android:layout_width="339dp"
         android:layout_height="53dp"
+        android:layout_marginTop="14dp"
+        android:layout_marginBottom="64dp"
         android:hint="Give your option"
         android:inputType="textMultiLine"
         android:lines="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.527"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.513" />
+        app:layout_constraintTop_toBottomOf="@+id/tvRatingScale" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="337dp"
         android:layout_height="35dp"
-        android:text="Send feedback"
+        android:layout_marginTop="13dp"
+        android:layout_marginBottom="16dp"
         android:background="@drawable/custom_button"
+        android:text="Send feedback"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.513"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/etFeedback" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rating_recy"
+        android:layout_width="409dp"
+        android:layout_height="402dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.688" />
+        app:layout_constraintVertical_bias="0.011" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -2,6 +2,8 @@ package com.example.finalprojectgroup8;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
@@ -22,7 +24,14 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
 
+import java.util.ArrayList;
+
+import static android.widget.Toast.*;
+
 public class Rating extends AppCompatActivity {
+    RecyclerView recyclerView;
+    Reviewadapter2 adapter;
+    ArrayList<RatingHelper> reviewlist;
     FirebaseDatabase rootnode;
     DatabaseReference reference,newreference,subref;
     EditText mFeedback;
@@ -42,6 +51,7 @@ public class Rating extends AppCompatActivity {
         final Button mSendFeedback = findViewById(R.id.btnSubmit);
 
         userdata = getIntent().getStringExtra("username").toString();
+        seedata(userdata);
         mRatingBar.setOnRatingBarChangeListener(new RatingBar.OnRatingBarChangeListener() {
             @Override
             public void onRatingChanged(RatingBar ratingBar, float v, boolean b) {
@@ -83,7 +93,7 @@ public class Rating extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 if (mFeedback.getText().toString().isEmpty()) {
-                    Toast.makeText(Rating.this, "Please fill in feedback text box", Toast.LENGTH_LONG).show();
+                    makeText(Rating.this, "Please fill in feedback text box", LENGTH_LONG).show();
                 } else{
                     review = mFeedback.getText().toString();
                     reference = FirebaseDatabase.getInstance().getReference("reviews");
@@ -118,11 +128,53 @@ public class Rating extends AppCompatActivity {
 
                     });
 
-                    Toast.makeText(Rating.this, "Thank you for sharing your feedback", Toast.LENGTH_SHORT).show();
+                    makeText(Rating.this, "Thank you for sharing your feedback", LENGTH_SHORT).show();
                     finish();
                 }
             }
         });
+
+    }
+    private void  seedata(String usernam){
+
+        reviewlist = new ArrayList<RatingHelper>();
+        recyclerView = findViewById(R.id.rating_recy);
+        RecyclerView.LayoutManager layoutManager = new LinearLayoutManager(this);
+        recyclerView.setLayoutManager(layoutManager);
+        adapter = new Reviewadapter2(Rating.this,reviewlist);
+
+        reference = FirebaseDatabase.getInstance().getReference("reviews").child(usernam);
+        reference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    int countreview = (int) dataSnapshot.getChildrenCount();
+                    Log.d("ciount", String.valueOf(countreview));
+                    for(int i=1;i<countreview;i++)
+                    {
+                        String datanode = "review"+i;
+                        String desc = dataSnapshot.child(datanode).child("description").getValue(String.class);
+                        int rating = Integer.parseInt(String.valueOf(dataSnapshot.child(datanode).child("rating").getValue(Long.class)));
+                        String reviwer = dataSnapshot.child(datanode).child("reviewerid").getValue(String.class);
+                        RatingHelper rh = new RatingHelper(reviwer,desc,rating);
+                        Log.d("class",rh.getRating()+rh.getReviewerid()+rh.getDescription());
+                        reviewlist.add(rh);
+
+                    }
+
+                    recyclerView.setAdapter(adapter);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(Rating.this, "error", LENGTH_SHORT).show();
+            }
+        });
+
+
+
 
     }
     private void addreview(String review1id) {

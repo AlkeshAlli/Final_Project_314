@@ -72,10 +72,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         ImageView headimage = headerView.findViewById(R.id.photo);
         TextView headname = headerView.findViewById(R.id.hedname);
         TextView heademail = headerView.findViewById(R.id.hedemail);
+        TextView headstatus = headerView.findViewById(R.id.hedstatus);
         int pic=R.drawable.logo;
         headimage.setImageResource(pic);
-        headname.setText(usernamesession+"   "+status);
+        headname.setText(usernamesession);
         heademail.setText(useremailsession);
+        headstatus.setText("Status"+status);
+
       HomeFragment fragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment, "Home");
@@ -103,6 +106,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
             fragmentTransaction.replace(R.id.frame_layout, fragment, "z");
             fragmentTransaction.commit();
 
+        }
+        if(id == R.id.appointment)
+        {
+            My_Appointments_Fragment fragment = new My_Appointments_Fragment();
+            FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
+            fragmentTransaction.replace(R.id.frame_layout,fragment,"Appointment");
+            fragmentTransaction.commit();
         }
         if (id == R.id.vp) {
             ViewFragment fragment = new ViewFragment();

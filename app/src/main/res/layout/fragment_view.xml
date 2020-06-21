@@ -3,7 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".ViewFragment">
+    tools:context=".ViewFragment"
+    android:background="#ffffff"
+    >
 
     <Button
         android:id="@+id/update"
@@ -15,5 +17,6 @@
         android:layout_marginBottom="-120dp"
         android:layout_centerVertical="true"
         android:layout_centerHorizontal="true"
-        android:gravity="center"/>
+        android:gravity="center"
+        tools:ignore="OnClick" />
 </RelativeLayout>

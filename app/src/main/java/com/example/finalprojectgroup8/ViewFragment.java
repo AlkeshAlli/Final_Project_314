@@ -35,18 +35,19 @@ public class ViewFragment extends Fragment {
     Boolean creationuser;
     String Storeage,Storedescription,Storeexp,Storeloc,Storefulln,Storerate,
             Storechild,Storefornannydescp,Storefornannyloc,Storefornannyfname,Storefornannyrate;
+    Button udate;
 
     public ViewFragment() {
         // Required empty public constructor
     }
+
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         //Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_view, container, false);
-        Button udate = v.findViewById(R.id.update);
-
+        udate = v.findViewById(R.id.update);
         preferences =this.getActivity().getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
         usernamefromsession=preferences.getString("username",null);
         udate.setOnClickListener(new View.OnClickListener() {
@@ -136,5 +137,7 @@ public class ViewFragment extends Fragment {
 
         return  v;
     }
+
+
 
 }
