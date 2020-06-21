@@ -76,7 +76,7 @@ public class Login extends AppCompatActivity {
 
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Register As Nanny");
         Query checkuser = reference.orderByChild("username").equalTo(userenteredname);
-        System.out.println("Print to console" + checkuser);
+        System.out.println("Print to console" + checkuser+ " : "+userenteredname);
         checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {

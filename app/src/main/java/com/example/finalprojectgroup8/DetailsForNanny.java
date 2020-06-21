@@ -44,6 +44,7 @@ public class DetailsForNanny extends AppCompatActivity {
             public void onClick(View v) {
                 Intent i= new Intent(DetailsForNanny.this,Rating.class);
                 i.putExtra("username",name);
+                i.putExtra("status","For Nanny");
                 startActivity(i);
             }
         });

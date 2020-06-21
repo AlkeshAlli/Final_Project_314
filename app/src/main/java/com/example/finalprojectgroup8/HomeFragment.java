@@ -65,7 +65,11 @@ public class HomeFragment extends Fragment {
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
 
                 for (DataSnapshot dataSnapshot1 : dataSnapshot.getChildren()) {
-                    RecyclerViewList r = dataSnapshot1.getValue(RecyclerViewList.class);
+                    String name,place,price;
+                    name = dataSnapshot1.child("username").getValue(String.class);
+                    place = dataSnapshot1.child("location").getValue(String.class);
+                    price = dataSnapshot1.child("rate").getValue(String.class);
+                    RecyclerViewList r = new RecyclerViewList(name,place,price);
                     list.add(r);
                 }
 

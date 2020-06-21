@@ -72,7 +72,7 @@ public class Rating extends AppCompatActivity {
                 }
             }
         });
-
+        final String status = getIntent().getStringExtra("status");
         SharedPreferences preferences = this.getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
         usernamesession = preferences.getString("username", null);
         review = mFeedback.getText().toString();
@@ -88,22 +88,26 @@ public class Rating extends AppCompatActivity {
                     review = mFeedback.getText().toString();
                     reference = FirebaseDatabase.getInstance().getReference("reviews");
                     reference = reference.child(userid);
+
                     Query rootdata = reference.orderByChild("reviewid");
                     rootdata.addListenerForSingleValueEvent(new ValueEventListener() {
                         @Override
                         public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                            int flag=0;
                             if(dataSnapshot.exists()) {
                                 countreviews = (int) dataSnapshot.getChildrenCount();
+                                Log.d("exact child *******", String.valueOf(countreviews));
+                                flag=1;
                                 //countreviews=countreviews-1;
                             }
                             else
                             {
-                                reviewid="review1";
+                                countreviews=1;
                             }
                             reviewid="review"+(countreviews);
                             Log.d("Reviews count",countreviews+"   user "+userid);
                             addreview(reviewid);
-                            // Calculate_Avg cal = new Calculate_Avg(userid);
+                            Calculate_Avg cal = new Calculate_Avg(userid,status);
                             Log.d("review",reviewid);
                         }
 

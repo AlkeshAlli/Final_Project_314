@@ -12,6 +12,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.firebase.database.ValueEventListener;
@@ -21,11 +22,11 @@ import java.util.ArrayList;
 public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
 
 
-    HomeFragment homeFragment;
+    Fragment homeFragment;
     ArrayList<RecyclerViewList> recyclerViewLists;
 
 
-    public myAdapter(HomeFragment home, ArrayList<RecyclerViewList> profiles){
+    public myAdapter(Fragment home, ArrayList<RecyclerViewList> profiles){
         this.homeFragment = home;
         this.recyclerViewLists = profiles;
 
@@ -47,6 +48,7 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
         int pic=R.drawable.logo;
         holder.myText1.setText(recyclerViewLists.get(position).getUsername());
         holder.myText2.setText(recyclerViewLists.get(position).getLocation());
+        holder.myText3.setText("$ "+recyclerViewLists.get(position).getRate());
         holder.myImage.setImageResource(pic);
 
         SharedPreferences preferences = this.homeFragment.getActivity().getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
@@ -83,13 +85,14 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
     }
 
     public class MyViewHolder extends RecyclerView.ViewHolder{
-        TextView myText1,myText2;
+        TextView myText1,myText2,myText3;
         ImageView myImage;
         ConstraintLayout mainLayout;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             myText1 = itemView.findViewById(R.id.username);
             myText2 = itemView.findViewById(R.id.mailid);
+            myText3 = itemView.findViewById(R.id.recy_rate);
             myImage = itemView.findViewById(R.id.profileImage);
             mainLayout = itemView.findViewById(R.id.mainLayout);        }
     }
