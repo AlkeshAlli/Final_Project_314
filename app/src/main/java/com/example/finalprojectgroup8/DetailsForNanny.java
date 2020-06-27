@@ -95,7 +95,7 @@ public class DetailsForNanny extends AppCompatActivity {
                     String dbwage= (String) dataSnapshot.child(name).child("rate").getValue(String.class);
                     String dblocation=dataSnapshot.child(name).child("location").getValue(String.class);
                     String dbdescription=dataSnapshot.child(name).child("description").getValue(String.class);
-                    String serv_status = String.valueOf(dataSnapshot.child("Need Service").getValue(Integer.class));
+                    String serv_status = String.valueOf(dataSnapshot.child(name).child("NeedService").getValue(Integer.class));
                     if (serv_status==null){
                         serv_status="1000";
                     }

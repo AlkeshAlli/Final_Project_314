@@ -9,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -44,10 +45,10 @@ public class HomeFragment extends Fragment {
 
         if(preferences.getBoolean("asNanny",true)){
             //get the list forNanny users
-            getUsersList(view, "Profile Creation For Nanny","Need Service");
+            getUsersList(view, "Profile Creation For Nanny","NeedService");
         }else{
             //get the list asNanny users
-            getUsersList(view, "Profile Creation AsNanny","Service Provide");
+            getUsersList(view, "Profile Creation AsNanny","ServiceProvide");
         }
         return view;
     }
@@ -72,6 +73,8 @@ public class HomeFragment extends Fragment {
                     place = dataSnapshot1.child("location").getValue(String.class);
                     price = dataSnapshot1.child("rate").getValue(String.class);
                     serv_status = String.valueOf(dataSnapshot1.child(status_check).getValue(Integer.class));
+                    Log.i("check","home"+serv_status);
+                    //Log.i("check","home"+status_check);
                     if(Integer.parseInt(serv_status)==1)
                         Act_Serv="Only Children";
                     else if(Integer.parseInt(serv_status)==2)

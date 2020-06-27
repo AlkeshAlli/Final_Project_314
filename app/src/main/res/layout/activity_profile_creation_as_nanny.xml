@@ -214,28 +214,35 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp">
-        <CheckBox
-            android:id="@+id/child"
-            android:layout_width="130dp"
-            android:layout_height="39dp"
-            android:text="For Children"
-            android:textSize="18sp">
-        </CheckBox>
-        <CheckBox
-            android:id="@+id/old"
-            android:layout_width="130dp"
-            android:layout_height="39dp"
-            android:text="Old People"
-            android:textSize="18sp">
-        </CheckBox>
-        <CheckBox
-            android:id="@+id/both"
-            android:layout_width="130dp"
-            android:layout_height="39dp"
-            android:text="For Both"
-            android:textSize="18sp">
-        </CheckBox>
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal">
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/servicegrp"
+            android:orientation="horizontal">
+            <RadioButton
+                android:id="@+id/child"
+                android:layout_width="130dp"
+                android:layout_height="39dp"
+                android:text="For Children"
+                android:textSize="18sp">
+            </RadioButton>
+            <RadioButton
+                android:id="@+id/old"
+                android:layout_width="130dp"
+                android:layout_height="39dp"
+                android:text="Old People"
+                android:textSize="18sp">
+            </RadioButton>
+            <RadioButton
+                android:id="@+id/both"
+                android:layout_width="130dp"
+                android:layout_height="39dp"
+                android:text="For Both"
+                android:textSize="18sp">
+            </RadioButton>
+        </RadioGroup>
 
     </LinearLayout>
 

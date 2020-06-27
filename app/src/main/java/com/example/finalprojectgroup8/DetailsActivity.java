@@ -108,7 +108,7 @@ public class DetailsActivity extends AppCompatActivity {
                     String dblocation=dataSnapshot.child(name).child("location").getValue(String.class);
                     String dbexperience= (String) dataSnapshot.child(name).child("experience").getValue(String.class);
                     String dbdescription=dataSnapshot.child(name).child("description").getValue(String.class);
-                    String serv_status = String.valueOf(dataSnapshot.child("Service Provide").getValue(Integer.class));
+                    String serv_status = String.valueOf(dataSnapshot.child(name).child("ServiceProvide").getValue(Integer.class));
                     if (serv_status==null){
                         serv_status="1000";
                     }

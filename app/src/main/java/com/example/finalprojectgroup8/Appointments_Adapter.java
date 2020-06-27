@@ -3,6 +3,7 @@ package com.example.finalprojectgroup8;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.content.pm.PackageManager;
 import android.net.Uri;
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -13,6 +14,7 @@ import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.constraintlayout.widget.ConstraintLayout;
+import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
@@ -57,12 +59,16 @@ public class Appointments_Adapter extends RecyclerView.Adapter<Appointments_Adap
         holder.myImage2.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-
+                //Context context = v.getContext();
                 String contact= FindNumber(position);
 //                Log.d("contact :",contact);
                 Intent callIntent = new Intent(Intent.ACTION_CALL);
                 callIntent.setData(Uri.parse("tel:"+123456789));
 //                Log.d("contact :",contact);
+                /*if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
+                    context.startActivity(callIntent);
+                    return;
+                }*/
                 myap.startActivity(callIntent);
             }
         });
@@ -90,8 +96,8 @@ public class Appointments_Adapter extends RecyclerView.Adapter<Appointments_Adap
         dquery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                    contact[0] = String.valueOf(dataSnapshot.child(Appoiid).child("phone").getValue(Long.class));
-                    Log.d("id",contact[0]);
+                contact[0] = String.valueOf(dataSnapshot.child(Appoiid).child("phone").getValue(Long.class));
+                Log.d("id",contact[0]);
             }
 
             @Override

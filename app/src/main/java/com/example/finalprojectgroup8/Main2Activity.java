@@ -55,11 +55,11 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         mDrawerLayout.addDrawerListener(mDrawerToggle);
         mDrawerToggle.syncState();
 
-      NavigationView navigationView= findViewById(R.id.nav_view);
-      navigationView.setNavigationItemSelectedListener(this);
+        NavigationView navigationView= findViewById(R.id.nav_view);
+        navigationView.setNavigationItemSelectedListener(this);
 
-         preferences = this.getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
-         userbool = preferences.getBoolean("asNanny",true);
+        preferences = this.getSharedPreferences("com.example.finalprojectgroup8",Context.MODE_PRIVATE);
+        userbool = preferences.getBoolean("asNanny",true);
         String status;
         if(userbool == true)
             status="Nanny";
@@ -79,7 +79,7 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         heademail.setText(useremailsession);
         headstatus.setText("Status"+status);
 
-      HomeFragment fragment = new HomeFragment();
+        HomeFragment fragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
         fragmentTransaction.replace(R.id.frame_layout, fragment, "Home");
         fragmentTransaction.commit();
@@ -94,16 +94,13 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         if (id == R.id.home) {
             HomeFragment fragment = new HomeFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Home");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "Home").addToBackStack("Home");
             fragmentTransaction.commit();
         }
         if (id == R.id.updt) {
-
-
-
             UpdateFragment fragment = new UpdateFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "z");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "z").addToBackStack("Home");
             fragmentTransaction.commit();
 
         }
@@ -111,46 +108,46 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         {
             My_Appointments_Fragment fragment = new My_Appointments_Fragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout,fragment,"Appointment");
+            fragmentTransaction.replace(R.id.frame_layout,fragment,"Appointment").addToBackStack("Home");
             fragmentTransaction.commit();
         }
         if (id == R.id.vp) {
             ViewFragment fragment = new ViewFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "View Profile");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "View Profile").addToBackStack("Home");
             CreatingProfiles(usernamesession);
             fragmentTransaction.commit();
         }
         else if (id == R.id.review) {
             ReviewFragment fragment = new ReviewFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "My Reviews");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "My Reviews").addToBackStack("Home");
             fragmentTransaction.commit();
         }
         else if (id == R.id.bstnanny) {
             BnannyFragment fragment = new BnannyFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Best Nanny");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "Best Nanny").addToBackStack("Home");
             fragmentTransaction.commit();
         } else if (id == R.id.bstemp) {
             BempFragment fragment = new BempFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Best Employer");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "Best Employer").addToBackStack("Home");
             fragmentTransaction.commit();
         } else if (id == R.id.lgout) {
             LogoutFragment fragment = new LogoutFragment();
             FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();
-            fragmentTransaction.replace(R.id.frame_layout, fragment, "Logout fragment");
+            fragmentTransaction.replace(R.id.frame_layout, fragment, "Logout fragment").addToBackStack("Home");
             fragmentTransaction.commit();
         }
 
         mDrawerLayout.closeDrawer(GravityCompat.START);
-            return true;
-        }
+        return true;
+    }
 
     @Override
     public void onBackPressed() {
-
+        Log.i("back butten","Pressed");
         if (mDrawerLayout.isDrawerOpen(GravityCompat.START)) {
             mDrawerLayout.closeDrawer(GravityCompat.START);
         }
@@ -230,5 +227,5 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
         }
 
 
-}
+    }
 }
