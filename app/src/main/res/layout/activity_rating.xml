@@ -4,6 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#ffffff"
     tools:context=".Rating">
 
     <RatingBar
@@ -17,16 +18,14 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rating_recy"
-        app:layout_constraintVertical_bias="0.123" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.635" />
 
     <TextView
         android:id="@+id/tvRatingScale"
         android:layout_width="186dp"
         android:layout_height="35dp"
         android:layout_gravity="center"
-        android:layout_marginTop="11dp"
-        android:layout_marginBottom="132dp"
         android:gravity="center"
         android:text="Awesome. I love it"
         android:textAlignment="center"
@@ -36,35 +35,36 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ratingBar" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.712" />
 
     <EditText
         android:id="@+id/etFeedback"
         android:layout_width="339dp"
         android:layout_height="53dp"
-        android:layout_marginTop="14dp"
-        android:layout_marginBottom="64dp"
-        android:hint="Give your option"
+        android:hint="Give your opinion"
         android:inputType="textMultiLine"
         android:lines="5"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.486"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvRatingScale" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.803" />
 
     <Button
         android:id="@+id/btnSubmit"
         android:layout_width="337dp"
         android:layout_height="35dp"
-        android:layout_marginTop="13dp"
-        android:layout_marginBottom="16dp"
         android:background="@drawable/custom_button"
         android:text="Send feedback"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.364"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/etFeedback" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.897" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rating_recy"

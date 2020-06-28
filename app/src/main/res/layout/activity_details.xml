@@ -36,14 +36,14 @@
         app:layout_constraintVertical_bias="0.177" />
 
     <LinearLayout
-        android:layout_width="408dp"
-        android:layout_height="340dp"
+        android:layout_width="416dp"
+        android:layout_height="377dp"
         android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.53"
         tools:ignore="MissingConstraints"
-        tools:layout_editor_absoluteX="1dp">
+        tools:layout_editor_absoluteX="-7dp">
 
         <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
@@ -56,12 +56,12 @@
 
             <TextView
                 android:id="@+id/asprofilelocation"
-                android:textColor="#3990D5"
                 android:layout_width="356dp"
                 android:layout_height="43dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="#3990D5"
                 android:textSize="21sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
@@ -73,8 +73,8 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="374dp"
+            android:layout_height="71dp"
             android:layout_marginLeft="20dp"
             android:layout_marginRight="20dp"
             app:cardCornerRadius="6dp"
@@ -83,8 +83,8 @@
 
             <TextView
                 android:id="@+id/asprofileexperience"
-                android:layout_width="134dp"
-                android:layout_height="43dp"
+                android:layout_width="178dp"
+                android:layout_height="58dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
@@ -100,15 +100,15 @@
 
             <TextView
                 android:id="@+id/asprofilewage"
-                android:layout_width="141dp"
-                android:layout_height="43dp"
+                android:layout_width="162dp"
+                android:layout_height="54dp"
+                android:layout_marginLeft="190sp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
                 android:textColor="#3990D5"
                 android:textSize="21sp"
                 android:textStyle="normal"
-                android:layout_marginLeft="210sp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
@@ -125,6 +125,7 @@
             app:cardCornerRadius="6dp"
             app:cardElevation="6dp"
             app:cardUseCompatPadding="true">
+
             <TextView
                 android:id="@+id/asstatus"
                 android:layout_width="352dp"
@@ -132,13 +133,13 @@
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="#3990D5"
                 android:textSize="21sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textColor="#3990D5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.36" />
 
@@ -160,13 +161,13 @@
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="#3990D5"
                 android:textSize="21sp"
                 android:textStyle="normal"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"
                 app:layout_constraintStart_toStartOf="parent"
-                android:textColor="#3990D5"
                 app:layout_constraintTop_toTopOf="parent"
                 app:layout_constraintVertical_bias="0.36" />
         </androidx.cardview.widget.CardView>
@@ -182,14 +183,14 @@
 
             <TextView
                 android:id="@+id/asprofileage"
-                android:layout_width="356dp"
-                android:layout_height="43dp"
+                android:layout_width="365dp"
+                android:layout_height="49dp"
                 android:gravity="center"
                 android:text="TextView"
                 android:textAlignment="center"
+                android:textColor="#3990D5"
                 android:textSize="21sp"
                 android:textStyle="normal"
-                android:textColor="#3990D5"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.101"

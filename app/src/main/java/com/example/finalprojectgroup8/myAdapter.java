@@ -98,4 +98,9 @@ public class myAdapter extends RecyclerView.Adapter<myAdapter.MyViewHolder> {
             myImage = itemView.findViewById(R.id.profileImage);
             mainLayout = itemView.findViewById(R.id.mainLayout);        }
     }
+    public void filterationlist(ArrayList<RecyclerViewList> filteratedlist)
+    {
+        recyclerViewLists = filteratedlist;
+        notifyDataSetChanged();
+    }
 }

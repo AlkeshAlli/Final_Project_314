@@ -60,25 +60,16 @@ public class Appointments_Adapter extends RecyclerView.Adapter<Appointments_Adap
             @Override
             public void onClick(View v) {
                 //Context context = v.getContext();
-                String contact= FindNumber(position);
-//                Log.d("contact :",contact);
-                Intent callIntent = new Intent(Intent.ACTION_CALL);
-                callIntent.setData(Uri.parse("tel:"+123456789));
-//                Log.d("contact :",contact);
-                /*if (ActivityCompat.checkSelfPermission(context, android.Manifest.permission.CALL_PHONE) != PackageManager.PERMISSION_GRANTED) {
-                    context.startActivity(callIntent);
-                    return;
-                }*/
-                myap.startActivity(callIntent);
+                FindNumber(position);
             }
         });
 
 
     }
 
-    private String FindNumber(int position) {
+    private void FindNumber(int position) {
         String data_node_test;
-        final String[] contact = new String[1];
+        final String contact1;
         SharedPreferences preferences =myap.getActivity().getSharedPreferences("com.example.finalprojectgroup8", Context.MODE_PRIVATE);
         if(preferences.getBoolean("asNanny",true)){
 
@@ -92,12 +83,15 @@ public class Appointments_Adapter extends RecyclerView.Adapter<Appointments_Adap
         final String Appoiid=list_appo.get(position).getAppointerid();
 
         Query dquery = reference.orderByChild("username").equalTo(Appoiid);
-        Log.d("id",dquery.toString());
+       // Log.d("id",dquery.toString());
         dquery.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
-                contact[0] = String.valueOf(dataSnapshot.child(Appoiid).child("phone").getValue(Long.class));
-                Log.d("id",contact[0]);
+                String contact = dataSnapshot.child(Appoiid).child("phone").getValue(String.class);
+                Log.d("in method",contact);
+                Intent callIntent = new Intent(Intent.ACTION_CALL);
+                callIntent.setData(Uri.parse("tel:"+contact));
+                myap.startActivity(callIntent);
             }
 
             @Override
@@ -105,8 +99,7 @@ public class Appointments_Adapter extends RecyclerView.Adapter<Appointments_Adap
 
             }
         });
-        String s=contact[0];
-        return s;
+
     }
 
     @Override
