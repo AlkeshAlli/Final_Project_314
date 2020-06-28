@@ -9,6 +9,7 @@ import androidx.fragment.app.FragmentTransaction;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MenuItem;
@@ -21,6 +22,7 @@ import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.core.view.GravityCompat;
 
+import com.bumptech.glide.Glide;
 import com.google.android.material.navigation.NavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
@@ -28,6 +30,7 @@ import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.Query;
 import com.google.firebase.database.ValueEventListener;
+import com.squareup.picasso.Picasso;
 
 
 public class Main2Activity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener {
@@ -68,16 +71,31 @@ public class Main2Activity extends AppCompatActivity implements NavigationView.O
 
         usernamesession=preferences.getString("username",null);
         String useremailsession = preferences.getString("email",null);
-        View headerView = navigationView.getHeaderView(0);
-        ImageView headimage = headerView.findViewById(R.id.photo);
+        final View headerView = navigationView.getHeaderView(0);
+        final ImageView headimage = headerView.findViewById(R.id.photo);
         TextView headname = headerView.findViewById(R.id.hedname);
         TextView heademail = headerView.findViewById(R.id.hedemail);
         TextView headstatus = headerView.findViewById(R.id.hedstatus);
-        int pic=R.drawable.logo;
-        headimage.setImageResource(pic);
+        DatabaseReference imgref = FirebaseDatabase.getInstance().getReference("images");
+        Query query = imgref.orderByChild("username").equalTo(usernamesession);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    Uri imgurl = Uri.parse(dataSnapshot.child(usernamesession).child("imageurl").getValue(String.class));
+                    Glide.with(headerView).load(imgurl).into(headimage);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         headname.setText(usernamesession);
         heademail.setText(useremailsession);
-        headstatus.setText("Status"+status);
+        headstatus.setText(status);
 
         HomeFragment fragment = new HomeFragment();
         FragmentTransaction fragmentTransaction = getSupportFragmentManager().beginTransaction();

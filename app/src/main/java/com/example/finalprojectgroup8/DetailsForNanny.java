@@ -1,6 +1,7 @@
 package com.example.finalprojectgroup8;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -13,6 +14,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -82,6 +84,23 @@ public class DetailsForNanny extends AppCompatActivity {
         }
     }
     private void setData(){
+        DatabaseReference imgref = FirebaseDatabase.getInstance().getReference("images");
+        Query query = imgref.orderByChild("username").equalTo(name);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    Uri imgurl = Uri.parse(dataSnapshot.child(name).child("imageurl").getValue(String.class));
+                    Glide.with(DetailsForNanny.this).load(imgurl).into(profilepicture);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Profile Creation For Nanny");
         Query checkuser = reference.orderByChild("username").equalTo(name);
         checkuser.addListenerForSingleValueEvent(new ValueEventListener() {

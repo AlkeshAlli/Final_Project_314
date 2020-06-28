@@ -131,7 +131,7 @@
         android:id="@+id/setAv"
         android:layout_width="300dp"
         android:layout_height="wrap_content"
-        android:text="Set Availability"
+        android:text="Set"
         android:background="@drawable/custom_button"
         android:textColor="#FFFFFF"
         app:layout_constraintBottom_toBottomOf="parent"

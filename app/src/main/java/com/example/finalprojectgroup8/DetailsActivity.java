@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
@@ -17,6 +18,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -94,6 +96,23 @@ public class DetailsActivity extends AppCompatActivity {
         }
     }
     private void setData(){
+        DatabaseReference imgref = FirebaseDatabase.getInstance().getReference("images");
+        Query query = imgref.orderByChild("username").equalTo(name);
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    Uri imgurl = Uri.parse(dataSnapshot.child(name).child("imageurl").getValue(String.class));
+                    Glide.with(DetailsActivity.this).load(imgurl).into(profilepicture);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
         DatabaseReference reference = FirebaseDatabase.getInstance().getReference("Profile Creation AsNanny");
         Query checkuser = reference.orderByChild("username").equalTo(name);
         checkuser.addListenerForSingleValueEvent(new ValueEventListener() {
@@ -121,7 +140,6 @@ public class DetailsActivity extends AppCompatActivity {
                     else
                         Act_Serv="Not available";
                     int pic = R.drawable.logo;
-                    profilepicture.setImageResource(pic);
                     profilename.setText(name);
                     profilelocation.setText("Location: "+ dblocation);
                     profileage.setText("Age: "+dbage.toString()+" Years");
@@ -129,7 +147,6 @@ public class DetailsActivity extends AppCompatActivity {
                     profileexperience.setText("Experience "+dbexperience.toString()+" Years");
                     profilewage.setText("Expected Wage: $"+dbwage.toString());
                     profilestatus.setText("Service data: "+Act_Serv);
-
                 }
             }
 

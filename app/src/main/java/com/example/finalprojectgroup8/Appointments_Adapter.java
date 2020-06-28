@@ -18,6 +18,7 @@ import androidx.core.app.ActivityCompat;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.bumptech.glide.Glide;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -48,13 +49,30 @@ public class Appointments_Adapter extends RecyclerView.Adapter<Appointments_Adap
     }
 
     @Override
-    public void onBindViewHolder(@NonNull MyViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
         int pic=R.drawable.logo;
         int pic2=R.drawable.call;
         holder.myText1.setText(list_appo.get(position).getAppointerid());
         holder.myText2.setText(list_appo.get(position).getDate());
         holder.myText3.setText(list_appo.get(position).getTime());
-        holder.myImage1.setImageResource(pic);
+        DatabaseReference imgref = FirebaseDatabase.getInstance().getReference("images");
+        Query query = imgref.orderByChild("username").equalTo(list_appo.get(position).getAppointerid());
+        query.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if(dataSnapshot.exists())
+                {
+                    Uri imgurl = Uri.parse(dataSnapshot.child(list_appo.get(position).getAppointerid()).child("imageurl").getValue(String.class));
+                    Glide.with(myap).load(imgurl).into(holder.myImage1);
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         holder.myImage2.setImageResource(pic2);
         holder.myImage2.setOnClickListener(new View.OnClickListener() {
             @Override

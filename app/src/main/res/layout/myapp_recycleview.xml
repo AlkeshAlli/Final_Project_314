@@ -9,8 +9,8 @@
 
     <ImageView
         android:id="@+id/app_rec_img"
-        android:layout_width="116dp"
-        android:layout_height="140dp"
+        android:layout_width="120dp"
+        android:layout_height="150dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.02"
